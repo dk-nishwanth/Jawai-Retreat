@@ -12,6 +12,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [showPopup, setShowPopup] = useState(true);
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Check for prefers-reduced-motion
@@ -30,6 +31,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   // Ensure autoplay works seamlessly
   useEffect(() => {
     if (videoRef.current && !prefersReducedMotion) {
+      if (videoRef.current.readyState >= 3) setVideoReady(true);
       videoRef.current.play().catch(() => {
         // Autoplay policy fallback: silent catch
       });
@@ -51,15 +53,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         />
       ) : (
         /* Video Element: autoplay, muted, loop, playsinline, preload="auto", object-fit: cover */
+        <>
+        {/* Poster stays underneath; the video fades in over it once it can play */}
+        <img
+          src={posterUrl}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
         <video
           ref={videoRef}
+          onCanPlay={() => setVideoReady(true)}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          poster={posterUrl}
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
         >
           {/* Mobile source: 720p / mobile media query */}
           <source
@@ -74,6 +84,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
           Your browser does not support the video tag.
         </video>
+        </>
       )}
 
       {/* Faint warm overlay on top: rgba(68,76,53,0.12) */}
