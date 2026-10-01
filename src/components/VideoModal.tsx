@@ -24,7 +24,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
         {/* Video / Visual Cinematic View */}
         <div className="relative w-full aspect-video overflow-hidden">
           <img
-            src="/src/assets/images/hero_johannis_resort_1790837379724.jpg"
+            src="/images/hero_johannis_resort_1790837379724.jpg"
             alt="Johannis Resort cinematic feel-good experience"
             className="w-full h-full object-cover"
           />

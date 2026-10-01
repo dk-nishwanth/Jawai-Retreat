@@ -17,7 +17,7 @@ export const ShortcutTeaserSection: React.FC<ShortcutTeaserSectionProps> = ({
             {/* Left Photo (615×765 = 82rem × 102rem) */}
             <div className="w-[82rem] h-[102rem] overflow-hidden border-0">
               <img
-                src="/src/assets/images/jawai_leopard_safari_landscape_1790838368353.jpg"
+                src="/images/jawai_leopard_safari_landscape_1790838368353.jpg"
                 alt="Granite hills and leopard safari landscape in Jawai"
                 className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"
@@ -27,7 +27,7 @@ export const ShortcutTeaserSection: React.FC<ShortcutTeaserSectionProps> = ({
             {/* Right Photo (615×675 = 82rem × 90rem) */}
             <div className="w-[82rem] h-[90rem] overflow-hidden border-0">
               <img
-                src="/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+                src="/images/hero_jawai_retreat_1790838322856.jpg"
                 alt="Jawai Retreat exterior and granite landscape"
                 className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"
@@ -71,7 +71,7 @@ export const ShortcutTeaserSection: React.FC<ShortcutTeaserSectionProps> = ({
         <div className="md:hidden flex flex-col items-center">
           <div className="w-full h-[38rem] overflow-hidden mb-[2rem]">
             <img
-              src="/src/assets/images/jawai_leopard_safari_landscape_1790838368353.jpg"
+              src="/images/jawai_leopard_safari_landscape_1790838368353.jpg"
               alt="Jawai safari"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -100,7 +100,7 @@ export const ShortcutTeaserSection: React.FC<ShortcutTeaserSectionProps> = ({
 
           <div className="w-full h-[35rem] overflow-hidden">
             <img
-              src="/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+              src="/images/hero_jawai_retreat_1790838322856.jpg"
               alt="Jawai landscape"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

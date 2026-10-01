@@ -9,7 +9,7 @@ interface FullBleedVideoBandProps {
 
 export const FullBleedVideoBand: React.FC<FullBleedVideoBandProps> = ({
   onPlayVideo,
-  imageSrc = "/src/assets/images/jawai_leopard_safari_landscape_1790838368353.jpg",
+  imageSrc = "/images/jawai_leopard_safari_landscape_1790838368353.jpg",
   altText = "Granite hills and retreat landscape near Jawai",
   tagline = "LEOPARDS, GRANITE HILLS & OPEN SKIES · JAWAI RETREAT FILM"
 }) => {

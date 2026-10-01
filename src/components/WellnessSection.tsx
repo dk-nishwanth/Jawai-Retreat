@@ -13,7 +13,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
           {/* Half-viewport large photo flush to left edge (x=0) */}
           <div className="absolute left-0 top-[14rem] w-[94.5rem] h-[118rem] overflow-hidden border-0">
             <img
-              src="/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+              src="/images/hero_jawai_retreat_1790838322856.jpg"
               alt="Freeform designer pool at Jawai Retreat"
               className="w-full h-full object-cover object-center"
               referrerPolicy="no-referrer"
@@ -23,7 +23,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
           {/* Overlapping square photo (cols 5–8: x=503 = 67rem, 435×435 = 58rem × 58rem), sitting 105px (14rem) higher */}
           <div className="absolute left-[67rem] top-0 w-[58rem] h-[58rem] overflow-hidden border-0 z-10">
             <img
-              src="/src/assets/images/jawai_luxury_pool_room_1790838337213.jpg"
+              src="/images/jawai_luxury_pool_room_1790838337213.jpg"
               alt="Luxury Room with Private Pool poolside seating"
               className="w-full h-full object-cover object-center"
               referrerPolicy="no-referrer"
@@ -61,7 +61,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
         <div className="md:hidden px-[2.2rem] flex flex-col items-center">
           <div className="w-[26.5rem] h-[26.5rem] overflow-hidden z-10 mb-[-6rem]">
             <img
-              src="/src/assets/images/jawai_luxury_pool_room_1790838337213.jpg"
+              src="/images/jawai_luxury_pool_room_1790838337213.jpg"
               alt="Poolside seating"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -70,7 +70,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
 
           <div className="w-full h-[45.5rem] overflow-hidden">
             <img
-              src="/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+              src="/images/hero_jawai_retreat_1790838322856.jpg"
               alt="The Blue Heart Designer Pool"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

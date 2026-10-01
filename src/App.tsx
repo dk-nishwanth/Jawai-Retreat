@@ -86,7 +86,7 @@ export default function App() {
         {/* SECTION 4: FULL-BLEED VIDEO BAND (~688px tall) */}
         <FullBleedVideoBand
           onPlayVideo={() => setIsVideoModalOpen(true)}
-          imageSrc="/src/assets/images/jawai_leopard_safari_landscape_1790838368353.jpg"
+          imageSrc="/images/jawai_leopard_safari_landscape_1790838368353.jpg"
           altText="Granite hills and retreat landscape near Jawai"
           tagline="LEOPARDS, GRANITE HILLS & OPEN SKIES · JAWAI RETREAT FILM"
         />

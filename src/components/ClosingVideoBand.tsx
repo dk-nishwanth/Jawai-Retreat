@@ -8,7 +8,7 @@ export const ClosingVideoBand: React.FC<ClosingVideoBandProps> = ({ onPlayVideo 
   return (
     <section className="relative w-full h-[42rem] md:h-[129rem] overflow-hidden select-none">
       <img
-        src="/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+        src="/images/hero_jawai_retreat_1790838322856.jpg"
         alt="Jawai Retreat courtyard and granite hill dusk view"
         className="w-full h-full object-cover object-center"
         referrerPolicy="no-referrer"

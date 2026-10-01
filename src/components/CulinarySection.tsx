@@ -13,7 +13,7 @@ export const CulinarySection: React.FC<CulinarySectionProps> = ({ onOpenBooking 
           {/* DESKTOP ROW 1: Two portrait photos side by side */}
           <div className="hidden md:block md:col-start-5 md:col-span-4 w-full h-[69rem] overflow-hidden border-0">
             <img
-              src="/src/assets/images/jawai_dining_courtyard_1790838383373.jpg"
+              src="/images/jawai_dining_courtyard_1790838383373.jpg"
               alt="Jawai Retreat dining and lounge setting"
               className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
@@ -22,7 +22,7 @@ export const CulinarySection: React.FC<CulinarySectionProps> = ({ onOpenBooking 
 
           <div className="hidden md:block md:col-start-9 md:col-span-4 w-full h-[69rem] overflow-hidden border-0 md:mt-[3.5rem]">
             <img
-              src="/src/assets/images/editorial_garden_path_1790837689103.jpg"
+              src="/images/editorial_garden_path_1790837689103.jpg"
               alt="Jawai Retreat landscaped pathway and farm approach"
               className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
@@ -32,7 +32,7 @@ export const CulinarySection: React.FC<CulinarySectionProps> = ({ onOpenBooking 
           {/* DESKTOP ROW 2: Wide landscape photo in cols 5–12 */}
           <div className="hidden md:block md:col-start-5 md:col-span-8 w-full h-[69rem] overflow-hidden border-0 mt-[3rem]">
             <img
-              src="/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+              src="/images/hero_jawai_retreat_1790838322856.jpg"
               alt="Outdoor seating area and courtyard at Jawai Retreat"
               className="w-full h-full object-cover object-center hover:scale-103 transition-transform duration-700"
               referrerPolicy="no-referrer"
@@ -43,7 +43,7 @@ export const CulinarySection: React.FC<CulinarySectionProps> = ({ onOpenBooking 
           <div className="md:hidden flex flex-col gap-[2rem] mb-[3rem]">
             <div className="w-[16.7rem] h-[20.2rem] overflow-hidden">
               <img
-                src="/src/assets/images/jawai_dining_courtyard_1790838383373.jpg"
+                src="/images/jawai_dining_courtyard_1790838383373.jpg"
                 alt="Jawai Retreat dining setting"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -51,7 +51,7 @@ export const CulinarySection: React.FC<CulinarySectionProps> = ({ onOpenBooking 
             </div>
             <div className="w-full h-[20.2rem] overflow-hidden">
               <img
-                src="/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+                src="/images/hero_jawai_retreat_1790838322856.jpg"
                 alt="Jawai Retreat outdoor seating area"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

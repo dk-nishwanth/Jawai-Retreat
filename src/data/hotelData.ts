@@ -28,7 +28,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "Couples & Families",
     size: "512 sq ft including balcony",
     price: "₹9,000/night + taxes",
-    image: "/src/assets/images/jawai_premium_balcony_room_1790838351238.jpg",
+    image: "/images/jawai_premium_balcony_room_1790838351238.jpg",
     description: "Four rooms, each opening to the hills with earthy Marwari craft details and a private balcony facing the Jawai granite landscape. Includes generous room proportions, private outdoor space, attached western bathroom, and MAP dining with breakfast and dinner.",
     features: [
       "Private Balcony facing granite hills",
@@ -46,7 +46,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "Privacy Stay · 2-3 Persons",
     size: "752 sq ft including pool and sit-out",
     price: "₹12,000/night + taxes",
-    image: "/src/assets/images/jawai_luxury_pool_room_1790838337213.jpg",
+    image: "/images/jawai_luxury_pool_room_1790838337213.jpg",
     description: "Two private rooms, each designed as its own world with a freeform designer pool, covered sit-out, premium linen, and calm interiors. Generous proportions and absolute seclusion nestled beside the granite landscape.",
     features: [
       "Private Freeform Designer Pool",
@@ -64,7 +64,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "2 Persons",
     size: "512 sq ft",
     price: "₹9,000/night + taxes",
-    image: "/src/assets/images/editorial_bedroom_reading_1790837675143.jpg",
+    image: "/images/editorial_bedroom_reading_1790837675143.jpg",
     description: "Airy bedroom layout with local stone accents, handcrafted Marwari timber work, and floor-to-ceiling glass framing the rocky wilderness.",
     features: [
       "Earthy desert palette",
@@ -80,7 +80,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "Couples & Solitude",
     size: "752 sq ft total area",
     price: "₹12,000/night + taxes",
-    image: "/src/assets/images/hero_jawai_retreat_1790838322856.jpg",
+    image: "/images/hero_jawai_retreat_1790838322856.jpg",
     description: "Generous covered verandah with comfortable lounge seating, overlooking your personal freeform stone plunge pool and granite horizons.",
     features: [
       "Shaded poolside lounge",
@@ -103,7 +103,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Open access for all staying guests",
       "Best hours: early morning and golden hour"
     ],
-    image: "/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+    image: "/images/hero_jawai_retreat_1790838322856.jpg"
   },
   {
     id: "leopard-safari",
@@ -116,7 +116,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Early morning and evening golden slots",
       "Jungle safari covers wider terrain and birdlife"
     ],
-    image: "/src/assets/images/jawai_leopard_safari_landscape_1790838368353.jpg"
+    image: "/images/jawai_leopard_safari_landscape_1790838368353.jpg"
   },
   {
     id: "bonnet-breakfast",
@@ -129,7 +129,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Farm-fresh produce and a full breakfast spread",
       "Best timed with sunrise"
     ],
-    image: "/src/assets/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
   },
   {
     id: "farm-to-table",
@@ -142,7 +142,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Pure vegetarian Marwari-style cooking",
       "Paired with your included dinner"
     ],
-    image: "/src/assets/images/editorial_garden_path_1790837689103.jpg"
+    image: "/images/editorial_garden_path_1790837689103.jpg"
   },
   {
     id: "dam-sundowner",
@@ -155,7 +155,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Drinks and light bites",
       "Crocodile and migratory bird sightings are common"
     ],
-    image: "/src/assets/images/merano_mountain_teaser_1790837703866.jpg"
+    image: "/images/merano_mountain_teaser_1790837703866.jpg"
   },
   {
     id: "high-tea",
@@ -168,7 +168,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Afternoon golden hour slot",
       "Works beautifully as a couple's experience"
     ],
-    image: "/src/assets/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
   },
   {
     id: "candlelight-dinner",
@@ -181,7 +181,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Curated for anniversaries, proposals, and special occasions",
       "Pairs with a sundowner for a full evening"
     ],
-    image: "/src/assets/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
   },
   {
     id: "open-reel-cinema",
@@ -194,7 +194,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Your choice of film",
       "Pairs beautifully with a bonfire"
     ],
-    image: "/src/assets/images/hero_jawai_retreat_1790838322856.jpg"
+    image: "/images/hero_jawai_retreat_1790838322856.jpg"
   },
   {
     id: "bonfire-evening",
@@ -207,7 +207,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Can be paired with movie night or private dinner",
       "Outdoor music permitted until 10:30 PM"
     ],
-    image: "/src/assets/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
   },
   {
     id: "rabari-walk",
@@ -220,7 +220,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Morning slot recommended",
       "Pairs with a farm visit for a full cultural day"
     ],
-    image: "/src/assets/images/editorial_garden_path_1790837689103.jpg"
+    image: "/images/editorial_garden_path_1790837689103.jpg"
   },
   {
     id: "shepherd-walk",
@@ -233,7 +233,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Small group or private",
       "No commentary needed - just walk"
     ],
-    image: "/src/assets/images/jawai_leopard_safari_landscape_1790838368353.jpg"
+    image: "/images/jawai_leopard_safari_landscape_1790838368353.jpg"
   },
   {
     id: "temple-hiking",
@@ -246,7 +246,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Morning slot recommended",
       "Combined temple and hike circuit available"
     ],
-    image: "/src/assets/images/merano_mountain_teaser_1790837703866.jpg"
+    image: "/images/merano_mountain_teaser_1790837703866.jpg"
   },
   {
     id: "dawn-milking",
@@ -259,7 +259,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Hands-on and guided",
       "Great for families with kids"
     ],
-    image: "/src/assets/images/editorial_garden_path_1790837689103.jpg"
+    image: "/images/editorial_garden_path_1790837689103.jpg"
   },
   {
     id: "local-pottery",
@@ -272,39 +272,39 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Works for all ages",
       "Take your piece home if it survives the kiln"
     ],
-    image: "/src/assets/images/editorial_bedroom_reading_1790837675143.jpg"
+    image: "/images/editorial_bedroom_reading_1790837675143.jpg"
   }
 ];
 
 export const JAWAI_GALLERY = [
   {
     title: "Jawai Retreat exterior and garden view",
-    src: "/src/assets/images/hero_jawai_retreat_1790838322856.jpg",
+    src: "/images/hero_jawai_retreat_1790838322856.jpg",
     aspect: "landscape"
   },
   {
     title: "Jawai Retreat outdoor seating area",
-    src: "/src/assets/images/jawai_dining_courtyard_1790838383373.jpg",
+    src: "/images/jawai_dining_courtyard_1790838383373.jpg",
     aspect: "portrait"
   },
   {
     title: "Jawai Retreat room interior",
-    src: "/src/assets/images/jawai_premium_balcony_room_1790838351238.jpg",
+    src: "/images/jawai_premium_balcony_room_1790838351238.jpg",
     aspect: "landscape"
   },
   {
     title: "Jawai Retreat landscaped pathway",
-    src: "/src/assets/images/editorial_garden_path_1790837689103.jpg",
+    src: "/images/editorial_garden_path_1790837689103.jpg",
     aspect: "portrait"
   },
   {
     title: "Jawai Retreat courtyard and architecture",
-    src: "/src/assets/images/jawai_luxury_pool_room_1790838337213.jpg",
+    src: "/images/jawai_luxury_pool_room_1790838337213.jpg",
     aspect: "landscape"
   },
   {
     title: "Jawai Retreat dining and lounge setting",
-    src: "/src/assets/images/jawai_dining_courtyard_1790838383373.jpg",
+    src: "/images/jawai_dining_courtyard_1790838383373.jpg",
     aspect: "portrait"
   }
 ];

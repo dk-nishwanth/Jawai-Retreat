@@ -37,7 +37,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   }, [prefersReducedMotion]);
 
   const videoUrl = "https://typo3.johannis.it/fileadmin/user_upload/hotel-johannis-pool-outdoor-view.mp4";
-  const posterUrl = "/src/assets/images/hero_johannis_resort_1790837379724.jpg";
+  const posterUrl = "/images/hero_johannis_resort_1790837379724.jpg";
 
   return (
     <section className="relative w-full h-screen min-h-[77.9rem] md:h-[120rem] overflow-hidden select-none bg-black">
@@ -114,7 +114,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="shrink-0 bg-[#E1D7CB] p-[0.8rem] pb-[2.4rem] border border-[#C8BAAA]">
               <div className="w-[18rem] h-[18rem] sm:w-[20.6rem] sm:h-[20.6rem] overflow-hidden">
                 <img
-                  src="/src/assets/images/jawai_premium_balcony_room_1790838351238.jpg"
+                  src="/images/jawai_premium_balcony_room_1790838351238.jpg"
                   alt="Premium Balcony Room with granite landscape view at Jawai Retreat"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

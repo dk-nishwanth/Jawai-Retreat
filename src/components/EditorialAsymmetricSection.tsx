@@ -15,7 +15,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
           {/* DESKTOP ROW 1: Two portrait photos side by side */}
           <div className="hidden md:block md:col-start-5 md:col-span-4 w-full h-[69rem] overflow-hidden border-0">
             <img
-              src="/src/assets/images/jawai_premium_balcony_room_1790838351238.jpg"
+              src="/images/jawai_premium_balcony_room_1790838351238.jpg"
               alt="Jawai Retreat room interior and granite view"
               className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
@@ -24,7 +24,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
 
           <div className="hidden md:block md:col-start-9 md:col-span-4 w-full h-[69rem] overflow-hidden border-0 md:mt-[3.5rem]">
             <img
-              src="/src/assets/images/editorial_garden_path_1790837689103.jpg"
+              src="/images/editorial_garden_path_1790837689103.jpg"
               alt="Jawai Retreat landscaped pathway and farm approach"
               className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
@@ -34,7 +34,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
           {/* DESKTOP ROW 2: Wide landscape photo in cols 5–12 */}
           <div className="hidden md:block md:col-start-5 md:col-span-8 w-full h-[69rem] overflow-hidden border-0 mt-[3rem]">
             <img
-              src="/src/assets/images/jawai_luxury_pool_room_1790838337213.jpg"
+              src="/images/jawai_luxury_pool_room_1790838337213.jpg"
               alt="Jawai Retreat courtyard and architecture with freeform pool"
               className="w-full h-full object-cover object-center hover:scale-103 transition-transform duration-700"
               referrerPolicy="no-referrer"
@@ -45,7 +45,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
           <div className="md:hidden flex flex-col gap-[2rem] mb-[3rem]">
             <div className="w-[16.7rem] h-[20.2rem] overflow-hidden">
               <img
-                src="/src/assets/images/jawai_premium_balcony_room_1790838351238.jpg"
+                src="/images/jawai_premium_balcony_room_1790838351238.jpg"
                 alt="Jawai Retreat room interior"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -53,7 +53,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
             </div>
             <div className="w-full h-[20.2rem] overflow-hidden">
               <img
-                src="/src/assets/images/jawai_luxury_pool_room_1790838337213.jpg"
+                src="/images/jawai_luxury_pool_room_1790838337213.jpg"
                 alt="Jawai Retreat courtyard and architecture"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
