@@ -38,54 +38,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     }
   }, [prefersReducedMotion]);
 
-  const videoUrl = "https://typo3.johannis.it/fileadmin/user_upload/hotel-johannis-pool-outdoor-view.mp4";
-  const posterUrl = "/images/hero_johannis_resort_1790837379724.jpg";
+  const video1080 = "/video/hero-1080.mp4";
+  const video720 = "/video/hero-720.mp4";
 
   return (
-    <section className="relative w-full h-screen min-h-[77.9rem] md:h-[120rem] overflow-hidden select-none bg-black">
-      {/* Reduced motion fallback: show poster image instead of video */}
-      {prefersReducedMotion ? (
+    <section className="relative w-full h-screen min-h-[77.9rem] overflow-hidden select-none bg-black">
+      {/* Hero video: autoplay, muted, loop, playsinline. Fades in once it can play.
+          With reduced motion it is not autoplayed and stays on its first frame. */}
+      {/* Poster = first frame of the video, so it appears instantly and the fade is seamless */}
+      <picture>
+        <source media="(max-width:767px)" srcSet="/video/hero-poster-mobile.jpg" />
         <img
-          src={posterUrl}
-          alt="Outdoor infinity pool at golden hour with palms and mountain view"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          referrerPolicy="no-referrer"
-        />
-      ) : (
-        /* Video Element: autoplay, muted, loop, playsinline, preload="auto", object-fit: cover */
-        <>
-        {/* Poster stays underneath; the video fades in over it once it can play */}
-        <img
-          src={posterUrl}
+          src="/video/hero-poster.jpg"
           alt=""
           aria-hidden="true"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <video
-          ref={videoRef}
-          onCanPlay={() => setVideoReady(true)}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
-        >
-          {/* Mobile source: 720p / mobile media query */}
-          <source
-            src={videoUrl}
-            media="(max-width:767px)"
-            type="video/mp4"
-          />
-          {/* Desktop full source */}
-          <source
-            src={videoUrl}
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-        </>
-      )}
+      </picture>
+      <video
+        ref={videoRef}
+        autoPlay={!prefersReducedMotion}
+        loop={!prefersReducedMotion}
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        onCanPlay={() => setVideoReady(true)}
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
+      >
+        <source src={video720} media="(max-width:767px)" type="video/mp4" />
+        <source src={video1080} type="video/mp4" />
+      </video>
 
       {/* Faint warm overlay on top: rgba(68,76,53,0.12) */}
       <div
