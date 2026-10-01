@@ -76,12 +76,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         className="absolute inset-0 pointer-events-none"
         style={{ backgroundColor: "rgba(68, 76, 53, 0.12)" }}
       />
+      {/* Top scrim so the white header and logo stay readable over bright footage */}
+      <div className="absolute inset-x-0 top-0 h-[26rem] md:h-[18rem] bg-gradient-to-b from-black/55 via-black/20 to-transparent pointer-events-none" />
       {/* Subtle bottom gradient to ensure caption contrast */}
       <div className="absolute inset-x-0 bottom-0 h-[25rem] bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
 
       {/* Hero h1 caption: centred at the bottom (11.25px / 1.5rem desktop, 13px / 1.2rem mobile, tracking 0.1em desktop / 0.07em mobile) */}
-      <div className="absolute bottom-[6rem] md:bottom-[4.5rem] left-1/2 -translate-x-1/2 w-[90vw] md:w-[65rem] text-center z-20 pointer-events-none">
-        <h1 className="hero-caption">
+      <div className="absolute bottom-[6rem] md:bottom-[4.5rem] left-1/2 -translate-x-1/2 md:left-[6rem] md:translate-x-0 w-[90vw] md:w-[75rem] text-center md:text-left z-20 pointer-events-none">
+        <h1 className="hero-caption md:!text-left">
           JAWAI RETREAT.<br />
           TWO INTIMATE STAYS, SLOW MEALS, GRANITE VIEWS, AND LAKESIDE SAFARIS.
         </h1>

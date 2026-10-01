@@ -25,8 +25,10 @@ import { ExperiencesModal } from './components/ExperiencesModal';
 import { BookingDrawer } from './components/BookingDrawer';
 import { CookiePreferencesModal } from './components/CookiePreferencesModal';
 import { RoomItem, ExperienceItem } from './data/hotelData';
+import { useScrollMotion } from './hooks/useScrollMotion';
 
 export default function App() {
+  useScrollMotion();
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [selectedRoomForModal, setSelectedRoomForModal] = useState<RoomItem | null>(null);
   const [isAllRoomsModalOpen, setIsAllRoomsModalOpen] = useState(false);
