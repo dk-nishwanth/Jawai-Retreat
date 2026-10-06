@@ -69,7 +69,6 @@ export default function App() {
         {/* SECTION 1: HERO (100vh) */}
         <HeroSection
           onOpenBooking={() => handleOpenBooking()}
-          onOpenCookiePrefs={() => setIsCookiePrefsOpen(true)}
         />
 
         {/* SECTION 2: INTRO TEXT (Centred 8-column block) */}
