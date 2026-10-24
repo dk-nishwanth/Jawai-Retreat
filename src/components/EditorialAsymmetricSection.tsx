@@ -8,7 +8,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
   onOpenBooking
 }) => {
   return (
-    <section id="overview" className="w-full bg-white pt-[2rem] md:pt-[8rem] pb-[5rem] md:pb-[6rem]">
+    <section id="overview" className="w-full bg-white pt-[2rem] md:pt-[3rem] pb-[5rem] md:pb-[6rem]">
       <div className="w-full max-w-[192rem] mx-auto px-[2.2rem] md:px-[6rem]">
         {/* 12-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[2.2rem] md:gap-[3rem]">

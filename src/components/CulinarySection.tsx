@@ -6,7 +6,7 @@ interface CulinarySectionProps {
 
 export const CulinarySection: React.FC<CulinarySectionProps> = ({ onOpenBooking }) => {
   return (
-    <section id="dining" className="w-full bg-white pt-[5rem] md:pt-[8rem] pb-[5rem] md:pb-[6rem]">
+    <section id="dining" className="w-full bg-white pt-[5rem] md:pt-[6rem] pb-[5rem] md:pb-[6rem]">
       <div className="w-full max-w-[192rem] mx-auto px-[2.2rem] md:px-[6rem]">
         {/* 12-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[2.2rem] md:gap-[3rem]">

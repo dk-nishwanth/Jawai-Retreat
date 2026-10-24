@@ -12,6 +12,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [videoReady, setVideoReady] = useState(false);
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const [soundOn, setSoundOn] = useState(false);
+  const [portrait] = useState(
+    () => window.matchMedia('(max-width: 767px) and (orientation: portrait)').matches
+  );
+  const heroVisibleRef = useRef(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const HERO_VOLUME = 0.6;
@@ -29,11 +33,39 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  // Pick the file that fits the screen: a portrait crop for phones, wide video otherwise.
+  // Pick the file: a portrait H.264 crop for phones. On wider screens use the 4K AV1
+  // file when this device can decode it smoothly, otherwise the 1080p H.264 file.
   useEffect(() => {
-    const portraitPhone = window.matchMedia('(max-width: 767px) and (orientation: portrait)').matches;
-    setVideoSrc(portraitPhone ? '/video/hero-mobile.mp4' : '/video/hero-1080.mp4');
-  }, []);
+    if (portrait) {
+      setVideoSrc('/video/hero-mobile.mp4');
+      return;
+    }
+    let cancelled = false;
+    const pick = async () => {
+      try {
+        const info = await navigator.mediaCapabilities.decodingInfo({
+          type: 'file',
+          video: {
+            contentType: 'video/mp4; codecs="av01.0.08M.08"',
+            width: 3840,
+            height: 2160,
+            bitrate: 2300000,
+            framerate: 30,
+          },
+        });
+        if (info.supported && info.smooth) return '/video/hero-4k-av1.mp4';
+      } catch {
+        // Older browsers: use the 1080p file.
+      }
+      return '/video/hero-1080.mp4';
+    };
+    void pick().then((src) => {
+      if (!cancelled) setVideoSrc(src);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [portrait]);
 
   // iPhones only autoplay a video that is muted in the page itself. React does not
   // always write the muted attribute, so set everything iOS looks for by hand.
@@ -79,7 +111,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     if (prefersReducedMotion) return;
     const startOnGesture = () => {
       const video = videoRef.current;
-      if (video && video.paused) {
+      if (video && video.paused && heroVisibleRef.current && !document.hidden) {
         video.play().catch(() => {});
       }
     };
@@ -88,23 +120,34 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => events.forEach((e) => window.removeEventListener(e, startOnGesture));
   }, [prefersReducedMotion]);
 
-  // Pause (and silence) the video when the hero is scrolled out of view.
+  // Pause (which also silences it) when the hero is mostly scrolled out of view,
+  // or when the browser tab is in the background. Resume when it comes back.
   useEffect(() => {
     const section = sectionRef.current;
     const video = videoRef.current;
     if (!section || !video || prefersReducedMotion) return;
+
+    const syncPlayback = () => {
+      if (heroVisibleRef.current && !document.hidden) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
+        heroVisibleRef.current = entry.isIntersecting && entry.intersectionRatio >= 0.35;
+        syncPlayback();
       },
-      { threshold: 0.25 }
+      { threshold: [0, 0.2, 0.35, 0.5, 0.75, 1] }
     );
     observer.observe(section);
-    return () => observer.disconnect();
+    document.addEventListener('visibilitychange', syncPlayback);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', syncPlayback);
+    };
   }, [videoSrc, prefersReducedMotion]);
 
   const toggleSound = () => {
@@ -121,21 +164,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     }
   };
 
+  // The wide video has a social-media caption burned into its bottom edge. Drawing it
+  // 18% taller than the hero and aligning to the top pushes the caption out of view.
+  const mediaFit = portrait ? 'inset-0 h-full object-center' : 'left-0 top-0 h-[118%] object-top';
+
   return (
     <section ref={sectionRef} className="relative w-full h-screen min-h-[77.9rem] overflow-hidden select-none bg-black">
       {/* Hero video: autoplay, muted, loop, playsinline. Fades in once it can play.
           With reduced motion it is not autoplayed and stays on its first frame. */}
       {/* Poster = first frame of the video, so it appears instantly and the fade is seamless */}
-      <picture>
-        <source media="(max-width:767px)" srcSet="/video/hero-poster-mobile.jpg" />
-        <img
-          src="/video/hero-poster.jpg"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-      </picture>
+      <img
+        src={portrait ? '/video/hero-poster-mobile.jpg' : '/video/hero-poster.jpg'}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        className={`absolute w-full object-cover ${mediaFit}`}
+      />
       {videoSrc && (
         <video
           ref={setVideoEl}
@@ -147,7 +191,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           aria-hidden="true"
           onLoadedData={() => setVideoReady(true)}
           onPlaying={() => setVideoReady(true)}
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute w-full object-cover ${mediaFit} transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
         />
       )}
 
