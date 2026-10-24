@@ -102,10 +102,10 @@ export const DayAtJawaiSection: React.FC = () => {
             A DAY AT JAWAI
           </span>
           <h2 className="section-h2 mb-[2.2rem]">
-            FROM SLOW MORNINGS TO GOLDEN-HOUR SAFARIS.
+            THE ROOMS, THE TERRACES, THE HILLS.
           </h2>
           <p className="lead-text">
-            Moments from a stay at Jawai Retreat, from reading in bed and long breakfasts to jeep drives through the granite hills and picnics at dusk.
+            Details and views from Jawai Retreat, from carved jaali niches and private terraces to jeep drives through the granite hills and picnics at dusk.
           </p>
         </div>
 

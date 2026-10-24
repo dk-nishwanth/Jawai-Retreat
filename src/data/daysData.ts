@@ -3,84 +3,51 @@ export interface DayChapter { id: string; label: string; title: string; text: st
 
 export const JAWAI_DAYS: DayChapter[] = [
   {
-    "id": "morning",
-    "label": "01 · MORNING",
-    "title": "SLOW MORNINGS, TERRACOTTA & LIGHT",
-    "text": "Wake without an alarm in the Premium Balcony Rooms. Read in bed, open the curtains to the granite hills, and let the day start slowly.",
+    "id": "rooms",
+    "label": "01 · THE ROOMS",
+    "title": "TERRACOTTA, JAALI & LANTERNLIGHT",
+    "text": "Handcrafted details in every room, from terracotta plates and carved jaali niches to brass lanterns and blue-washed walls.",
     "images": [
       {
-        "src": "/images/days/day-1.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-4.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-9.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-3.jpg",
+        "src": "/images/days/room-terracotta.jpg",
         "w": 1400,
         "h": 933
       },
       {
-        "src": "/images/days/day-6.jpg",
-        "w": 933,
+        "src": "/images/days/room-blue.jpg",
+        "w": 1400,
+        "h": 933
+      },
+      {
+        "src": "/images/days/jaali-lantern.jpg",
+        "w": 1188,
+        "h": 1400
+      },
+      {
+        "src": "/images/days/clothes-rack.jpg",
+        "w": 827,
         "h": 1400
       }
     ]
   },
   {
-    "id": "breakfast",
-    "label": "02 · TABLE",
-    "title": "BREAKFAST WITHOUT A CLOCK",
-    "text": "Slow, farm-led vegetarian meals served at the lodge, with tea poured and nowhere to be.",
+    "id": "terraces",
+    "label": "02 · THE TERRACES",
+    "title": "BALCONIES FACING THE GRANITE",
+    "text": "Private balconies that open to green fields and rock-strewn hills, with long views to catch the light fading.",
     "images": [
       {
-        "src": "/images/days/day-40.jpg",
+        "src": "/images/days/terrace-far.jpg",
         "w": 933,
         "h": 1400
       },
       {
-        "src": "/images/days/day-41.jpg",
-        "w": 1400,
-        "h": 933
-      }
-    ]
-  },
-  {
-    "id": "quiet",
-    "label": "03 · QUIET HOURS",
-    "title": "BLUE WALLS, WHITE LINEN",
-    "text": "A book, a cup of tea and arched jaali niches. The Luxury Room is made for long, unhurried afternoons.",
-    "images": [
-      {
-        "src": "/images/days/day-45.jpg",
+        "src": "/images/days/terrace-bamboo.jpg",
         "w": 933,
         "h": 1400
       },
       {
-        "src": "/images/days/day-46.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-44.jpg",
-        "w": 1400,
-        "h": 933
-      },
-      {
-        "src": "/images/days/day-42.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-48.jpg",
+        "src": "/images/days/terrace-evening.jpg",
         "w": 933,
         "h": 1400
       }
@@ -88,85 +55,75 @@ export const JAWAI_DAYS: DayChapter[] = [
   },
   {
     "id": "safari",
-    "label": "04 · SAFARI",
+    "label": "03 · THE SAFARI",
     "title": "INTO THE GRANITE HILLS",
-    "text": "Climb into the open jeep for dawn and dusk drives across Jawai's granite hills and lakeside grass.",
+    "text": "Open jeeps for dawn and dusk drives across Jawai's granite hills and lakeside grass.",
     "images": [
       {
-        "src": "/images/days/day-22.jpg",
+        "src": "/images/days/safari-jeep.jpg",
         "w": 933,
         "h": 1400
       },
       {
-        "src": "/images/days/day-26.jpg",
+        "src": "/images/days/safari-rock.jpg",
         "w": 1400,
         "h": 933
       },
       {
-        "src": "/images/days/day-27.jpg",
-        "w": 1400,
-        "h": 933
-      },
-      {
-        "src": "/images/days/day-20.jpg",
-        "w": 1400,
-        "h": 933
-      },
-      {
-        "src": "/images/days/day-23.jpg",
+        "src": "/images/days/safari-lake.jpg",
         "w": 933,
         "h": 1400
       },
       {
-        "src": "/images/days/day-30.jpg",
-        "w": 933,
-        "h": 1400
+        "src": "/images/days/safari-hills.jpg",
+        "w": 1400,
+        "h": 933
+      },
+      {
+        "src": "/images/days/safari-track.jpg",
+        "w": 1400,
+        "h": 933
+      },
+      {
+        "src": "/images/days/safari-tree.jpg",
+        "w": 1400,
+        "h": 933
+      },
+      {
+        "src": "/images/days/safari-sunset.jpg",
+        "w": 1400,
+        "h": 933
+      },
+      {
+        "src": "/images/days/safari-grass.jpg",
+        "w": 1400,
+        "h": 933
       }
     ]
   },
   {
-    "id": "golden",
-    "label": "05 · GOLDEN HOUR",
-    "title": "JEEP BONNET BREAKFASTS, DUSK PICNICS",
-    "text": "Chai on the bonnet, a spread under the open sky, and a pool-side picnic as the light turns gold.",
+    "id": "table",
+    "label": "04 · THE TABLE",
+    "title": "BONNET BREAKFASTS & DUSK PICNICS",
+    "text": "Chai on the jeep bonnet, a spread laid out under open sky, and picnics as the light turns gold.",
     "images": [
       {
-        "src": "/images/days/day-33.jpg",
-        "w": 933,
+        "src": "/images/days/table-still-life.jpg",
+        "w": 1400,
+        "h": 1155
+      },
+      {
+        "src": "/images/days/picnic-spread.jpg",
+        "w": 1400,
+        "h": 1260
+      },
+      {
+        "src": "/images/days/picnic-table.jpg",
+        "w": 1157,
         "h": 1400
       },
       {
-        "src": "/images/days/day-37.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-38.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-15.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-16.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-14.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-17.jpg",
-        "w": 933,
-        "h": 1400
-      },
-      {
-        "src": "/images/days/day-12.jpg",
+        "src": "/images/days/bonnet-table.jpg",
         "w": 933,
         "h": 1400
       }
