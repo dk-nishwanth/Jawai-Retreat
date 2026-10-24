@@ -21,7 +21,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
           </div>
 
           {/* Overlapping square photo (cols 5–8: x=503 = 67rem, 435×435 = 58rem × 58rem), sitting 105px (14rem) higher */}
-          <div className="absolute left-[67rem] top-0 w-[58rem] h-[58rem] overflow-hidden border-0 z-10">
+          <div className="absolute left-[67rem] right-[6rem] top-0 h-[58rem] overflow-hidden border-0 z-10">
             <img
               src="/images/ota/ota-47.jpg"
               alt="Freeform designer pool at Jawai Retreat"
