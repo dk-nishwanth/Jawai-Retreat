@@ -189,6 +189,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   // footage is cut out), so they simply fill the hero.
   const mediaFit = 'inset-0 h-full object-center';
 
+  // Phones: a wide slice of the scene in a 4:5 frame (zoomed out), centred in the hero, fading
+  // into a blurred copy of the same picture instead of cropping the video to a thin strip.
+  const frameFade = 'linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%)';
+  const frameStyle = portrait
+    ? ({ WebkitMaskImage: frameFade, maskImage: frameFade } as React.CSSProperties)
+    : undefined;
+
   return (
     <section ref={sectionRef} className="relative w-full h-screen min-h-[77.9rem] overflow-hidden select-none bg-black">
       {/* Hero video: autoplay, muted, loop, playsinline. Fades in once it can play.
@@ -199,7 +206,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         alt=""
         aria-hidden="true"
         fetchPriority="high"
-        className={`absolute w-full object-cover ${mediaFit}`}
+        className={
+          portrait
+            ? 'absolute inset-0 w-full h-full object-cover scale-150 blur-2xl brightness-75'
+            : `absolute w-full object-cover ${mediaFit}`
+        }
       />
       {videoSrc && (
         <video
@@ -214,7 +225,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           aria-hidden="true"
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
-          className={`absolute w-full object-cover ${mediaFit}`}
+          style={frameStyle}
+          className={
+            portrait
+              ? 'absolute left-0 right-0 top-[40%] -translate-y-1/2 w-full aspect-[4/5] object-cover'
+              : `absolute w-full object-cover ${mediaFit}`
+          }
         />
       )}
 
