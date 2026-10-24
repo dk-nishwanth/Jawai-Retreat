@@ -10,7 +10,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [showPopup, setShowPopup] = useState(true);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const [soundOn, setSoundOn] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const HERO_VOLUME = 0.6;
 
   // Check for prefers-reduced-motion
   useEffect(() => {
@@ -25,21 +29,63 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  // Ensure autoplay works seamlessly
+  // Pick the file that fits the screen: a portrait crop for phones, wide video otherwise.
   useEffect(() => {
-    if (videoRef.current && !prefersReducedMotion) {
-      if (videoRef.current.readyState >= 3) setVideoReady(true);
-      videoRef.current.play().catch(() => {
-        // Autoplay policy fallback: silent catch
-      });
-    }
-  }, [prefersReducedMotion]);
+    const portraitPhone = window.matchMedia('(max-width: 767px) and (orientation: portrait)').matches;
+    setVideoSrc(portraitPhone ? '/video/hero-mobile.mp4' : '/video/hero-1080.mp4');
+  }, []);
 
-  const video1080 = "/video/hero-1080.mp4";
-  const video720 = "/video/hero-720.mp4";
+  // Start playing. Browsers only allow sound without a tap on some visits, so try
+  // with sound first and fall back to muted autoplay. The Sound button handles the rest.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoSrc || prefersReducedMotion) return;
+    if (video.readyState >= 3) setVideoReady(true);
+    video.volume = HERO_VOLUME;
+    video.muted = false;
+    video
+      .play()
+      .then(() => setSoundOn(true))
+      .catch(() => {
+        video.muted = true;
+        setSoundOn(false);
+        video.play().catch(() => {
+          // Autoplay blocked entirely: the poster stays visible.
+        });
+      });
+  }, [videoSrc, prefersReducedMotion]);
+
+  // Pause (and silence) the video when the hero is scrolled out of view.
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video || prefersReducedMotion) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [videoSrc, prefersReducedMotion]);
+
+  const toggleSound = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const next = video.muted;
+    video.muted = !next;
+    if (next) video.volume = HERO_VOLUME;
+    video.play().catch(() => {});
+    setSoundOn(next);
+  };
 
   return (
-    <section className="relative w-full h-screen min-h-[77.9rem] overflow-hidden select-none bg-black">
+    <section ref={sectionRef} className="relative w-full h-screen min-h-[77.9rem] overflow-hidden select-none bg-black">
       {/* Hero video: autoplay, muted, loop, playsinline. Fades in once it can play.
           With reduced motion it is not autoplayed and stays on its first frame. */}
       {/* Poster = first frame of the video, so it appears instantly and the fade is seamless */}
@@ -53,20 +99,57 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
       </picture>
-      <video
-        ref={videoRef}
-        autoPlay={!prefersReducedMotion}
-        loop={!prefersReducedMotion}
-        muted
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-        onCanPlay={() => setVideoReady(true)}
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
-      >
-        <source src={video720} media="(max-width:767px)" type="video/mp4" />
-        <source src={video1080} type="video/mp4" />
-      </video>
+      {videoSrc && (
+        <video
+          ref={videoRef}
+          src={videoSrc}
+          loop={!prefersReducedMotion}
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          onCanPlay={() => setVideoReady(true)}
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
+        />
+      )}
+
+      {/* Sound toggle: autoplay with sound is blocked by most browsers until the visitor taps */}
+      {!prefersReducedMotion && (
+        <button
+          type="button"
+          onClick={toggleSound}
+          aria-pressed={soundOn}
+          aria-label={soundOn ? 'Turn video sound off' : 'Turn video sound on'}
+          className="absolute top-[9.5rem] right-[1.4rem] md:top-[11.5rem] md:right-[6rem] z-30 flex items-center gap-[0.9rem] h-[4.6rem] min-w-[4.6rem] justify-center px-[1.3rem] rounded-full bg-black/35 backdrop-blur-sm text-white border border-white/40 hover:bg-black/55 transition-colors cursor-pointer"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="w-[2.2rem] h-[2.2rem] shrink-0"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M11 5 6 9H3v6h3l5 4V5z" />
+            {soundOn ? (
+              <>
+                <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+                <path d="M18.5 5.5a9 9 0 0 1 0 13" />
+              </>
+            ) : (
+              <>
+                <path d="m16 9 5 6" />
+                <path d="m21 9-5 6" />
+              </>
+            )}
+          </svg>
+          <span className="hidden md:inline text-[1.2rem] uppercase font-semibold tracking-[0.12em]">
+            {soundOn ? 'Sound on' : 'Sound off'}
+          </span>
+        </button>
+      )}
 
       {/* Faint warm overlay on top: rgba(68,76,53,0.12) */}
       <div
