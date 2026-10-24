@@ -64,10 +64,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
         <div className="hidden md:grid md:grid-cols-3 gap-[4rem] mb-[5rem]">
           {/* Left Column: Brand & Tagline */}
           <div className="flex flex-col items-start footer-text">
-            <div className="flex flex-col mb-[1.5rem]">
-              <span className="font-script text-[1.4rem] leading-none mb-0.5">boutique wilderness retreat</span>
-              <span className="text-[2.8rem] tracking-[0.18em] font-light uppercase">JAWAI RETREAT</span>
-            </div>
+            <img src="/logo/logo-green.png" alt="Jawai Retreat" className="h-[14rem] w-auto mb-[1.5rem]" loading="lazy" />
             <p className="mb-[1.5rem] italic opacity-90">
               "Stay close to the wild, return to the calm."
             </p>
@@ -148,8 +145,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
         {/* MOBILE STACKED & CENTRED (< 768px) */}
         <div className="md:hidden flex flex-col items-center text-center footer-text gap-[2.4rem] mb-[4rem]">
           <div className="flex flex-col items-center">
-            <span className="font-script text-[1.4rem] leading-none mb-1">boutique wilderness retreat</span>
-            <span className="text-[2.6rem] tracking-[0.18em] font-light uppercase mb-2">JAWAI RETREAT</span>
+            <img src="/logo/logo-green.png" alt="Jawai Retreat" className="h-[12rem] w-auto mb-[1.5rem]" loading="lazy" />
             <p className="opacity-90">
               Jawai Bandh Road, Pali District, Rajasthan<br />
               Stay close to the wild, return to the calm.

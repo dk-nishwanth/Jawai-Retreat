@@ -150,22 +150,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Centre: Logo */}
-          <div className={`absolute left-1/2 -translate-x-1/2 top-[0.4rem] flex flex-col items-center origin-top transition-transform duration-500 ${isScrolled ? 'scale-[0.8]' : 'scale-100'}`}>
-            <span
-              className={`font-script text-[1.4rem] leading-none select-none mb-1 ${
-                dark ? 'text-[#444C35]' : 'text-white'
-              }`}
-            >
-              boutique wilderness retreat
-            </span>
-            <a
-              href="#"
-              className={`select-none transition-colors text-[2.8rem] tracking-[0.18em] font-light uppercase leading-none ${
-                dark ? 'text-[#444C35]' : 'text-white'
-              }`}
-              aria-label="Jawai Retreat Home"
-            >
-              JAWAI RETREAT
+          <div className={`absolute left-1/2 -translate-x-1/2 top-[0.2rem] flex items-center origin-top transition-transform duration-500 ${isScrolled ? 'scale-[0.85]' : 'scale-100'}`}>
+            <a href="#" className="block select-none" aria-label="Jawai Retreat Home">
+              <img
+                src={dark ? '/logo/horizontal-green.png' : '/logo/horizontal-white.png'}
+                alt="Jawai Retreat"
+                className="h-[5.8rem] w-auto"
+              />
             </a>
           </div>
 
@@ -201,13 +192,12 @@ export const Navbar: React.FC<NavbarProps> = ({
       </header>
 
       {/* MOBILE TOP BAR (< 768px) */}
-      <div className={`md:hidden absolute top-[4.5rem] left-0 right-0 z-[50] flex flex-col items-center justify-center pointer-events-none transition-colors duration-500 ${drawerOpen ? 'text-[#444C35]' : 'text-white'}`}>
-        <span className="font-script text-[1.4rem] leading-none mb-1">
-          boutique wilderness retreat
-        </span>
-        <div className="text-[2.6rem] tracking-[0.18em] font-light uppercase pointer-events-auto">
-          JAWAI RETREAT
-        </div>
+      <div className="md:hidden absolute top-[3.6rem] left-0 right-0 z-[50] flex items-center justify-center pointer-events-none">
+        <img
+          src={drawerOpen ? '/logo/horizontal-green.png' : '/logo/horizontal-white.png'}
+          alt="Jawai Retreat"
+          className="h-[4.6rem] w-auto pointer-events-auto"
+        />
       </div>
 
       {/* MOBILE FIXED BOTTOM BAR (y≈804 of 844) */}
