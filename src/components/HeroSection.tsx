@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
@@ -35,25 +35,58 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     setVideoSrc(portraitPhone ? '/video/hero-mobile.mp4' : '/video/hero-1080.mp4');
   }, []);
 
-  // Start playing. Browsers only allow sound without a tap on some visits, so try
-  // with sound first and fall back to muted autoplay. The Sound button handles the rest.
+  // iPhones only autoplay a video that is muted in the page itself. React does not
+  // always write the muted attribute, so set everything iOS looks for by hand.
+  const setVideoEl = useCallback((el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    if (!el) return;
+    el.muted = true;
+    el.defaultMuted = true;
+    el.setAttribute('muted', '');
+    el.setAttribute('playsinline', '');
+    el.setAttribute('webkit-playsinline', '');
+  }, []);
+
+  // Start playing. Touch phones: muted autoplay (the only thing they allow).
+  // Desktop: try with sound first, fall back to muted if the browser blocks it.
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !videoSrc || prefersReducedMotion) return;
-    if (video.readyState >= 3) setVideoReady(true);
     video.volume = HERO_VOLUME;
-    video.muted = false;
-    video
-      .play()
-      .then(() => setSoundOn(true))
-      .catch(() => {
-        video.muted = true;
-        setSoundOn(false);
-        video.play().catch(() => {
-          // Autoplay blocked entirely: the poster stays visible.
-        });
+    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+    const playMuted = () => {
+      video.muted = true;
+      setSoundOn(false);
+      return video.play().catch(() => {
+        // Blocked (for example iPhone Low Power Mode). The first tap starts it.
       });
+    };
+
+    if (isTouch) {
+      void playMuted();
+    } else {
+      video.muted = false;
+      video
+        .play()
+        .then(() => setSoundOn(true))
+        .catch(() => void playMuted());
+    }
   }, [videoSrc, prefersReducedMotion]);
+
+  // If autoplay was blocked, start the video on the visitor's first touch or click.
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const startOnGesture = () => {
+      const video = videoRef.current;
+      if (video && video.paused) {
+        video.play().catch(() => {});
+      }
+    };
+    const events = ['pointerdown', 'touchend', 'click', 'keydown'] as const;
+    events.forEach((e) => window.addEventListener(e, startOnGesture, { passive: true }));
+    return () => events.forEach((e) => window.removeEventListener(e, startOnGesture));
+  }, [prefersReducedMotion]);
 
   // Pause (and silence) the video when the hero is scrolled out of view.
   useEffect(() => {
@@ -77,11 +110,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const toggleSound = () => {
     const video = videoRef.current;
     if (!video) return;
-    const next = video.muted;
-    video.muted = !next;
-    if (next) video.volume = HERO_VOLUME;
-    video.play().catch(() => {});
-    setSoundOn(next);
+    if (video.muted || video.paused) {
+      video.muted = false;
+      video.volume = HERO_VOLUME;
+      video.play().catch(() => {});
+      setSoundOn(true);
+    } else {
+      video.muted = true;
+      setSoundOn(false);
+    }
   };
 
   return (
@@ -101,26 +138,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </picture>
       {videoSrc && (
         <video
-          ref={videoRef}
+          ref={setVideoEl}
           src={videoSrc}
           loop={!prefersReducedMotion}
           muted
           playsInline
           preload="auto"
           aria-hidden="true"
-          onCanPlay={() => setVideoReady(true)}
+          onLoadedData={() => setVideoReady(true)}
+          onPlaying={() => setVideoReady(true)}
           className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
         />
       )}
 
       {/* Sound toggle: autoplay with sound is blocked by most browsers until the visitor taps */}
-      {!prefersReducedMotion && (
+      {(
         <button
           type="button"
           onClick={toggleSound}
           aria-pressed={soundOn}
           aria-label={soundOn ? 'Turn video sound off' : 'Turn video sound on'}
-          className="absolute top-[9.5rem] right-[1.4rem] md:top-[11.5rem] md:right-[6rem] z-30 flex items-center gap-[0.9rem] h-[4.6rem] min-w-[4.6rem] justify-center px-[1.3rem] rounded-full bg-black/35 backdrop-blur-sm text-white border border-white/40 hover:bg-black/55 transition-colors cursor-pointer"
+          className="absolute top-[calc(env(safe-area-inset-top,0px)+9.5rem)] right-[1.4rem] md:top-[11.5rem] md:right-[6rem] z-30 flex items-center gap-[0.9rem] h-[4.6rem] min-w-[4.6rem] justify-center px-[1.3rem] rounded-full bg-black/35 backdrop-blur-sm text-white border border-white/40 hover:bg-black/55 transition-colors cursor-pointer"
         >
           <svg
             viewBox="0 0 24 24"

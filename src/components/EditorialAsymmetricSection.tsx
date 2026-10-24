@@ -8,7 +8,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
   onOpenBooking
 }) => {
   return (
-    <section id="overview" className="w-full bg-white pt-[6.5rem] md:pt-[8rem] pb-[6rem]">
+    <section id="overview" className="w-full bg-white pt-[2rem] md:pt-[8rem] pb-[5rem] md:pb-[6rem]">
       <div className="w-full max-w-[192rem] mx-auto px-[2.2rem] md:px-[6rem]">
         {/* 12-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[2.2rem] md:gap-[3rem]">
@@ -42,8 +42,8 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
           </div>
 
           {/* MOBILE IMAGES */}
-          <div className="md:hidden flex flex-col gap-[2rem] mb-[3rem]">
-            <div className="w-[16.7rem] h-[20.2rem] overflow-hidden">
+          <div className="md:hidden flex flex-col gap-[1.2rem] -mt-[0.4rem]">
+            <div className="w-full aspect-[4/3] overflow-hidden">
               <img
                 src="/images/ota/ota-04.jpg"
                 alt="Jawai Retreat room interior"
@@ -51,7 +51,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="w-full h-[20.2rem] overflow-hidden">
+            <div className="w-full aspect-[3/2] overflow-hidden">
               <img
                 src="/images/ota/ota-16.jpg"
                 alt="Jawai Retreat courtyard and architecture"
@@ -62,7 +62,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
           </div>
 
           {/* EDITORIAL TEXT BLOCK: cols 5–12 (x=503, w=893 = 119rem) 45px (6rem) below */}
-          <div className="col-span-1 md:col-start-5 md:col-span-8 mt-[4rem] md:mt-[6rem]">
+          <div className="col-span-1 md:col-start-5 md:col-span-8 mt-[2.4rem] md:mt-[6rem]">
             <h2 className="section-h2 mb-[2rem] md:mb-[3rem]">
               THE GRANITE VIEW & THE BLUE HEART. TWO INTIMATE STAYS.
             </h2>

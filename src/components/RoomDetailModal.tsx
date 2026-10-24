@@ -28,7 +28,7 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
         </button>
 
         {/* Hero Photo */}
-        <div className="relative h-[25rem] md:h-[45rem] w-full overflow-hidden shrink-0">
+        <div className="relative h-[17rem] md:h-[45rem] w-full overflow-hidden shrink-0">
           <img
             src={room.image}
             alt={room.name}
@@ -36,8 +36,8 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-          <div className="absolute bottom-[2.5rem] left-[2.5rem] right-[2.5rem] text-white">
-            <h3 className="text-[2.2rem] md:text-[3.6rem] uppercase font-semibold tracking-[0.03em] mb-[0.6rem]">
+          <div className="absolute bottom-[1.6rem] md:bottom-[2.5rem] left-[2rem] md:left-[2.5rem] right-[2rem] md:right-[2.5rem] text-white">
+            <h3 className="text-[1.9rem] md:text-[3.6rem] leading-[1.1] uppercase font-semibold tracking-[0.03em] mb-[0.6rem] pr-[4rem]">
               {room.name}
             </h3>
             <div className="text-[1.3rem] md:text-[1.6rem] text-white/95 flex gap-[1.5rem] font-normal">

@@ -37,42 +37,58 @@ export const AllRoomsModal: React.FC<AllRoomsModalProps> = ({
           </button>
         </div>
 
-        {/* Scrollable list */}
-        <div className="p-[3rem] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-[2.4rem]">
-          {ROOMS_EXACT_LIST.map((room) => (
+        {/* Scrollable list: one card per room type */}
+        <div className="p-[2rem] md:p-[3rem] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-[2rem] md:gap-[2.4rem]">
+          {ROOMS_EXACT_LIST.filter((r) =>
+            ['premium-balcony-rooms', 'luxury-room-private-pool'].includes(r.id)
+          ).map((room) => (
             <div
               key={room.id}
+              role="button"
+              tabIndex={0}
               onClick={() => {
                 onClose();
                 onSelectRoom(room);
               }}
-              className="border border-[#E1D7CB] hover:border-[#444C35] p-[2rem] cursor-pointer transition-colors flex gap-[2rem] group bg-white"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onClose();
+                  onSelectRoom(room);
+                }
+              }}
+              className="border border-[#E1D7CB] hover:border-[#444C35] cursor-pointer transition-colors flex flex-col group bg-white"
             >
-              <div className="w-[12rem] h-[12rem] md:w-[15rem] md:h-[15rem] shrink-0 overflow-hidden">
+              <div className="w-full aspect-[4/3] overflow-hidden bg-[#FAF8F5]">
                 <img
                   src={room.image}
                   alt={room.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               </div>
 
-              <div className="flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="text-[1.4rem] md:text-[1.6rem] font-semibold uppercase tracking-[0.03em] text-[#444C35] mb-[0.4rem] group-hover:underline">
-                    {room.name}
-                  </h4>
-                  <div className="text-[1.2rem] text-[#444C35]/80 flex flex-wrap gap-[1rem]">
-                    <span>{room.persons}</span>
-                    <span>·</span>
-                    <span>{room.size}</span>
-                  </div>
+              <div className="flex-1 flex flex-col p-[2rem] md:p-[2.4rem]">
+                <span className="text-[1.1rem] uppercase font-semibold tracking-[0.1em] text-[#444C35]/70 mb-[0.6rem]">
+                  {room.subName}
+                </span>
+                <h4 className="text-[1.8rem] md:text-[2rem] leading-[1.15] font-semibold uppercase tracking-[0.03em] text-[#444C35] mb-[1.2rem]">
+                  {room.name}
+                </h4>
+                <div className="flex flex-wrap gap-[0.8rem] mb-[1.4rem]">
+                  <span className="bg-[#FAF8F5] border border-[#E1D7CB] px-[1.1rem] py-[0.6rem] text-[1.2rem]">
+                    {room.persons}
+                  </span>
+                  <span className="bg-[#FAF8F5] border border-[#E1D7CB] px-[1.1rem] py-[0.6rem] text-[1.2rem]">
+                    {room.size}
+                  </span>
                 </div>
-
-                <div className="flex items-center justify-between pt-[1.2rem] border-t border-[#E1D7CB]/60 text-[1.4rem] font-semibold text-[#444C35]">
-                  <span>{room.size}</span>
-                  <span className="text-[1.2rem] uppercase tracking-wider underline">DETAILS →</span>
-                </div>
+                <p className="text-[1.3rem] md:text-[1.4rem] leading-[1.55] text-[#444C35]/85 mb-[1.8rem]">
+                  {room.description.split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.')}
+                </p>
+                <span className="mt-auto pt-[1.4rem] border-t border-[#E1D7CB]/70 text-[1.2rem] font-semibold uppercase tracking-[0.1em] text-[#444C35] underline underline-offset-4">
+                  VIEW DETAILS →
+                </span>
               </div>
             </div>
           ))}

@@ -6,7 +6,7 @@ interface IntroTextSectionProps {
 
 export const IntroTextSection: React.FC<IntroTextSectionProps> = ({ onOverviewClick }) => {
   return (
-    <section id="intro" className="w-full bg-white pt-[6.5rem] md:pt-[8rem] pb-[8rem] min-h-[39.5rem] md:min-h-[61rem] flex flex-col justify-center">
+    <section id="intro" className="w-full bg-white pt-[5rem] md:pt-[8rem] pb-[3rem] md:pb-[8rem] md:min-h-[61rem] flex flex-col justify-center">
       <div className="w-full max-w-[192rem] mx-auto px-[2.2rem] md:px-[6rem]">
         {/* 12-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[2.2rem] md:gap-[3rem]">
