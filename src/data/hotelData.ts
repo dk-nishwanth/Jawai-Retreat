@@ -28,7 +28,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "Couples & Families",
     size: "512 sq ft including balcony",
     price: "₹9,000/night + taxes",
-    image: "/images/jawai_premium_balcony_room_1790838351238.jpg",
+    image: "/images/ota/ota-02.jpg",
     description: "Four rooms, each opening to the hills with earthy Marwari craft details and a private balcony facing the Jawai granite landscape. Includes generous room proportions, private outdoor space, attached western bathroom, and MAP dining with breakfast and dinner.",
     features: [
       "Private Balcony facing granite hills",
@@ -46,7 +46,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "Privacy Stay · 2-3 Persons",
     size: "752 sq ft including pool and sit-out",
     price: "₹12,000/night + taxes",
-    image: "/images/jawai_luxury_pool_room_1790838337213.jpg",
+    image: "/images/ota/ota-35.jpg",
     description: "Two private rooms, each designed as its own world with a freeform designer pool, covered sit-out, premium linen, and calm interiors. Generous proportions and absolute seclusion nestled beside the granite landscape.",
     features: [
       "Private Freeform Designer Pool",
@@ -64,7 +64,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "2 Persons",
     size: "512 sq ft",
     price: "₹9,000/night + taxes",
-    image: "/images/editorial_bedroom_reading_1790837675143.jpg",
+    image: "/images/ota/ota-01.jpg",
     description: "Airy bedroom layout with local stone accents, handcrafted Marwari timber work, and floor-to-ceiling glass framing the rocky wilderness.",
     features: [
       "Earthy desert palette",
@@ -80,7 +80,7 @@ export const JAWAI_ROOMS: RoomItem[] = [
     persons: "Couples & Solitude",
     size: "752 sq ft total area",
     price: "₹12,000/night + taxes",
-    image: "/images/hero_jawai_retreat_1790838322856.jpg",
+    image: "/images/ota/ota-48.jpg",
     description: "Generous covered verandah with comfortable lounge seating, overlooking your personal freeform stone plunge pool and granite horizons.",
     features: [
       "Shaded poolside lounge",
@@ -103,7 +103,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Open access for all staying guests",
       "Best hours: early morning and golden hour"
     ],
-    image: "/images/hero_jawai_retreat_1790838322856.jpg"
+    image: "/images/ota/ota-49.jpg"
   },
   {
     id: "leopard-safari",
@@ -116,7 +116,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Early morning and evening golden slots",
       "Jungle safari covers wider terrain and birdlife"
     ],
-    image: "/images/jawai_leopard_safari_landscape_1790838368353.jpg"
+    image: "/images/ota/ota-26.jpg"
   },
   {
     id: "bonnet-breakfast",
@@ -129,7 +129,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Farm-fresh produce and a full breakfast spread",
       "Best timed with sunrise"
     ],
-    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/ota/ota-30.jpg"
   },
   {
     id: "farm-to-table",
@@ -142,7 +142,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Pure vegetarian Marwari-style cooking",
       "Paired with your included dinner"
     ],
-    image: "/images/editorial_garden_path_1790837689103.jpg"
+    image: "/images/ota/ota-29.jpg"
   },
   {
     id: "dam-sundowner",
@@ -155,7 +155,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Drinks and light bites",
       "Crocodile and migratory bird sightings are common"
     ],
-    image: "/images/merano_mountain_teaser_1790837703866.jpg"
+    image: "/images/ota/ota-28.jpg"
   },
   {
     id: "high-tea",
@@ -168,7 +168,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Afternoon golden hour slot",
       "Works beautifully as a couple's experience"
     ],
-    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/ota/ota-21.jpg"
   },
   {
     id: "candlelight-dinner",
@@ -181,7 +181,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Curated for anniversaries, proposals, and special occasions",
       "Pairs with a sundowner for a full evening"
     ],
-    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/ota/ota-18.jpg"
   },
   {
     id: "open-reel-cinema",
@@ -194,7 +194,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Your choice of film",
       "Pairs beautifully with a bonfire"
     ],
-    image: "/images/hero_jawai_retreat_1790838322856.jpg"
+    image: "/images/ota/ota-24.jpg"
   },
   {
     id: "bonfire-evening",
@@ -207,7 +207,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Can be paired with movie night or private dinner",
       "Outdoor music permitted until 10:30 PM"
     ],
-    image: "/images/jawai_dining_courtyard_1790838383373.jpg"
+    image: "/images/ota/ota-16.jpg"
   },
   {
     id: "rabari-walk",
@@ -220,7 +220,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Morning slot recommended",
       "Pairs with a farm visit for a full cultural day"
     ],
-    image: "/images/editorial_garden_path_1790837689103.jpg"
+    image: "/images/ota/ota-26.jpg"
   },
   {
     id: "shepherd-walk",
@@ -233,7 +233,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Small group or private",
       "No commentary needed - just walk"
     ],
-    image: "/images/jawai_leopard_safari_landscape_1790838368353.jpg"
+    image: "/images/ota/ota-25.jpg"
   },
   {
     id: "temple-hiking",
@@ -246,7 +246,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Morning slot recommended",
       "Combined temple and hike circuit available"
     ],
-    image: "/images/merano_mountain_teaser_1790837703866.jpg"
+    image: "/images/ota/ota-27.jpg"
   },
   {
     id: "dawn-milking",
@@ -259,7 +259,7 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Hands-on and guided",
       "Great for families with kids"
     ],
-    image: "/images/editorial_garden_path_1790837689103.jpg"
+    image: "/images/ota/ota-19.jpg"
   },
   {
     id: "local-pottery",
@@ -272,40 +272,214 @@ export const JAWAI_EXPERIENCES: ExperienceItem[] = [
       "Works for all ages",
       "Take your piece home if it survives the kiln"
     ],
-    image: "/images/editorial_bedroom_reading_1790837675143.jpg"
+    image: "/images/ota/ota-07.jpg"
   }
 ];
 
 export const JAWAI_GALLERY = [
   {
-    title: "Jawai Retreat exterior and garden view",
-    src: "/images/hero_jawai_retreat_1790838322856.jpg",
+    title: "Premium Balcony Room with teal headboard and terracotta wall art",
+    src: "/images/ota/ota-02.jpg",
+    thumb: "/images/ota/ota-02-sm.jpg",
     aspect: "landscape"
   },
   {
-    title: "Jawai Retreat outdoor seating area",
-    src: "/images/jawai_dining_courtyard_1790838383373.jpg",
-    aspect: "portrait"
-  },
-  {
-    title: "Jawai Retreat room interior",
-    src: "/images/jawai_premium_balcony_room_1790838351238.jpg",
+    title: "Premium Balcony Room, bed and bedside",
+    src: "/images/ota/ota-01.jpg",
+    thumb: "/images/ota/ota-01-sm.jpg",
     aspect: "landscape"
   },
   {
-    title: "Jawai Retreat landscaped pathway",
-    src: "/images/editorial_garden_path_1790837689103.jpg",
-    aspect: "portrait"
-  },
-  {
-    title: "Jawai Retreat courtyard and architecture",
-    src: "/images/jawai_luxury_pool_room_1790838337213.jpg",
+    title: "Blue Heart room with blue accent wall and carved arches",
+    src: "/images/ota/ota-35.jpg",
+    thumb: "/images/ota/ota-35-sm.jpg",
     aspect: "landscape"
   },
   {
-    title: "Jawai Retreat dining and lounge setting",
-    src: "/images/jawai_dining_courtyard_1790838383373.jpg",
+    title: "Blue Heart room, upholstered headboard and arched niches",
+    src: "/images/ota/ota-38.jpg",
+    thumb: "/images/ota/ota-38-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Blue Heart room opening to the private pool terrace",
+    src: "/images/ota/ota-42.jpg",
+    thumb: "/images/ota/ota-42-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Blue Heart room, spacious interior with seating area",
+    src: "/images/ota/ota-32.jpg",
+    thumb: "/images/ota/ota-32-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Sitting corner with carved wooden chairs and floor-to-ceiling glass",
+    src: "/images/ota/ota-36.jpg",
+    thumb: "/images/ota/ota-36-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Room entrance with view through to the bed",
+    src: "/images/ota/ota-03.jpg",
+    thumb: "/images/ota/ota-03-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Bed with teal headboard, terracotta plates and bedside table",
+    src: "/images/ota/ota-04.jpg",
+    thumb: "/images/ota/ota-04-sm.jpg",
     aspect: "portrait"
+  },
+  {
+    title: "Bedside detail with carved jaali niches",
+    src: "/images/ota/ota-50.jpg",
+    thumb: "/images/ota/ota-50-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Blue Heart room, bed against the blue wall",
+    src: "/images/ota/ota-39.jpg",
+    thumb: "/images/ota/ota-39-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "The two-storey rooms at dusk",
+    src: "/images/ota/ota-16.jpg",
+    thumb: "/images/ota/ota-16-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Premium Balcony Rooms with private balconies",
+    src: "/images/ota/ota-15.jpg",
+    thumb: "/images/ota/ota-15-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Balcony rooms and bougainvillea",
+    src: "/images/ota/ota-17.jpg",
+    thumb: "/images/ota/ota-17-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Bathroom with glass shower",
+    src: "/images/ota/ota-12.jpg",
+    thumb: "/images/ota/ota-12-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Marble bathroom",
+    src: "/images/ota/ota-44.jpg",
+    thumb: "/images/ota/ota-44-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Bathroom, wall-hung toilet and shower",
+    src: "/images/ota/ota-13.jpg",
+    thumb: "/images/ota/ota-13-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Marble washbasin and mirror",
+    src: "/images/ota/ota-45.jpg",
+    thumb: "/images/ota/ota-45-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Private pool with sun loungers",
+    src: "/images/ota/ota-47.jpg",
+    thumb: "/images/ota/ota-47-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Private pool and loungers behind the bamboo screen",
+    src: "/images/ota/ota-48.jpg",
+    thumb: "/images/ota/ota-48-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Private pool at the Blue Heart room",
+    src: "/images/ota/ota-49.jpg",
+    thumb: "/images/ota/ota-49-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Candlelit picnic setup in the wilderness",
+    src: "/images/ota/ota-18.jpg",
+    thumb: "/images/ota/ota-18-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Masala chai being poured",
+    src: "/images/ota/ota-19.jpg",
+    thumb: "/images/ota/ota-19-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "High tea with sandwiches and biscuits",
+    src: "/images/ota/ota-21.jpg",
+    thumb: "/images/ota/ota-21-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "High tea spread with cookies and muffins",
+    src: "/images/ota/ota-23.jpg",
+    thumb: "/images/ota/ota-23-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Tea stand with cookies",
+    src: "/images/ota/ota-20.jpg",
+    thumb: "/images/ota/ota-20-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Safari bonnet breakfast with fruit and a brass leopard",
+    src: "/images/ota/ota-30.jpg",
+    thumb: "/images/ota/ota-30-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Farm breakfast served in the field",
+    src: "/images/ota/ota-29.jpg",
+    thumb: "/images/ota/ota-29-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Leopard resting on the granite rocks",
+    src: "/images/ota/ota-25.jpg",
+    thumb: "/images/ota/ota-25-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Leopard among the Jawai boulders",
+    src: "/images/ota/ota-26.jpg",
+    thumb: "/images/ota/ota-26-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Jawai granite landscape and desert plants",
+    src: "/images/ota/ota-27.jpg",
+    thumb: "/images/ota/ota-27-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Jawai lake and granite hills",
+    src: "/images/ota/ota-28.jpg",
+    thumb: "/images/ota/ota-28-sm.jpg",
+    aspect: "portrait"
+  },
+  {
+    title: "Viewpoint gazebo in open bush country",
+    src: "/images/ota/ota-24.jpg",
+    thumb: "/images/ota/ota-24-sm.jpg",
+    aspect: "landscape"
+  },
+  {
+    title: "Carved writing desk and chair",
+    src: "/images/ota/ota-07.jpg",
+    thumb: "/images/ota/ota-07-sm.jpg",
+    aspect: "landscape"
   }
 ];
 

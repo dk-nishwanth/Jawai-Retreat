@@ -47,8 +47,10 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({ isOpen, onClose }) =
             >
               <div className="w-full h-[24rem] overflow-hidden">
                 <img
-                  src={item.src}
+                  src={(item as { thumb?: string }).thumb ?? item.src}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />

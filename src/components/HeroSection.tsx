@@ -108,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="max-sm:hidden shrink-0 bg-[#E1D7CB] p-[0.8rem] pb-[2.4rem] border border-[#C8BAAA]">
               <div className="w-[18rem] h-[18rem] sm:w-[20.6rem] sm:h-[20.6rem] overflow-hidden">
                 <img
-                  src="/images/jawai_premium_balcony_room_1790838351238.jpg"
+                  src="/images/ota/ota-02.jpg"
                   alt="Premium Balcony Room with granite landscape view at Jawai Retreat"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
