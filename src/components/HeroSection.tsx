@@ -9,7 +9,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   const [showPopup, setShowPopup] = useState(true);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [grace, setGrace] = useState(false);
+  const userPausedRef = useRef(false);
+  const [isTouch] = useState(
+    () => window.matchMedia('(hover: none), (pointer: coarse)').matches
+  );
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const [soundOn, setSoundOn] = useState(false);
   const [portrait] = useState(
@@ -33,8 +38,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  // Pick the file: a portrait H.264 crop for phones. On wider screens use the 4K AV1
-  // file when this device can decode it smoothly, otherwise the 1080p H.264 file.
+  // Pick the file: a portrait H.264 crop for phones. On wider screens use the AV1 file
+  // when this device can decode it smoothly, otherwise the 1080p H.264 file.
   useEffect(() => {
     if (portrait) {
       setVideoSrc('/video/hero-mobile.mp4');
@@ -47,13 +52,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           type: 'file',
           video: {
             contentType: 'video/mp4; codecs="av01.0.08M.08"',
-            width: 3840,
-            height: 2160,
-            bitrate: 2300000,
-            framerate: 30,
+            width: 1920,
+            height: 940,
+            bitrate: 4800000,
+            framerate: 60,
           },
         });
-        if (info.supported && info.smooth) return '/video/hero-4k-av1.mp4';
+        if (info.supported && info.smooth) return '/video/hero-av1.mp4';
       } catch {
         // Older browsers: use the 1080p file.
       }
@@ -85,8 +90,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     const video = videoRef.current;
     if (!video || !videoSrc || prefersReducedMotion) return;
     video.volume = HERO_VOLUME;
-    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-
     const playMuted = () => {
       video.muted = true;
       setSoundOn(false);
@@ -104,14 +107,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         .then(() => setSoundOn(true))
         .catch(() => void playMuted());
     }
-  }, [videoSrc, prefersReducedMotion]);
+  }, [videoSrc, prefersReducedMotion, isTouch]);
+
+  // Give autoplay a moment before showing the manual play button.
+  useEffect(() => {
+    const t = window.setTimeout(() => setGrace(true), 1500);
+    return () => window.clearTimeout(t);
+  }, []);
 
   // If autoplay was blocked, start the video on the visitor's first touch or click.
   useEffect(() => {
     if (prefersReducedMotion) return;
     const startOnGesture = () => {
       const video = videoRef.current;
-      if (video && video.paused && heroVisibleRef.current && !document.hidden) {
+      if (video && video.paused && heroVisibleRef.current && !document.hidden && !userPausedRef.current) {
         video.play().catch(() => {});
       }
     };
@@ -128,7 +137,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     if (!section || !video || prefersReducedMotion) return;
 
     const syncPlayback = () => {
-      if (heroVisibleRef.current && !document.hidden) {
+      if (heroVisibleRef.current && !document.hidden && !userPausedRef.current) {
         video.play().catch(() => {});
       } else {
         video.pause();
@@ -150,6 +159,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     };
   }, [videoSrc, prefersReducedMotion]);
 
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      userPausedRef.current = false;
+      video.play().catch(() => {});
+    } else {
+      userPausedRef.current = true;
+      video.pause();
+    }
+  };
+
   const toggleSound = () => {
     const video = videoRef.current;
     if (!video) return;
@@ -164,9 +185,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     }
   };
 
-  // The wide video has a social-media caption burned into its bottom edge. Drawing it
-  // 18% taller than the hero and aligning to the top pushes the caption out of view.
-  const mediaFit = portrait ? 'inset-0 h-full object-center' : 'left-0 top-0 h-[118%] object-top';
+  // All three video files are already cropped (the caption burned into the original
+  // footage is cut out), so they simply fill the hero.
+  const mediaFit = 'inset-0 h-full object-center';
 
   return (
     <section ref={sectionRef} className="relative w-full h-screen min-h-[77.9rem] overflow-hidden select-none bg-black">
@@ -184,25 +205,51 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <video
           ref={setVideoEl}
           src={videoSrc}
-          loop={!prefersReducedMotion}
+          poster={portrait ? '/video/hero-poster-mobile.jpg' : '/video/hero-poster.jpg'}
+          autoPlay={isTouch && !prefersReducedMotion}
+          loop
           muted
           playsInline
           preload="auto"
           aria-hidden="true"
-          onLoadedData={() => setVideoReady(true)}
-          onPlaying={() => setVideoReady(true)}
-          className={`absolute w-full object-cover ${mediaFit} transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          className={`absolute w-full object-cover ${mediaFit}`}
         />
       )}
 
-      {/* Sound toggle: autoplay with sound is blocked by most browsers until the visitor taps */}
-      {(
+      {/* If autoplay is blocked (iPhone Low Power Mode, data saver, reduced motion), offer a clear play button */}
+      {grace && !isPlaying && !userPausedRef.current && (
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label="Play video"
+          className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 z-30 w-[8rem] h-[8rem] rounded-full bg-black/40 backdrop-blur-sm border border-white/60 text-white flex items-center justify-center hover:bg-black/60 transition-colors cursor-pointer"
+        >
+          <svg viewBox="0 0 24 24" className="w-[3.4rem] h-[3.4rem] ml-[0.4rem]" fill="currentColor" aria-hidden="true">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+      )}
+
+      {/* Controls: pause/play and sound. Autoplay with sound is blocked by most browsers until the visitor taps */}
+      <div className="absolute top-[calc(env(safe-area-inset-top,0px)+9.5rem)] right-[1.4rem] md:top-[11.5rem] md:right-[6rem] z-30 flex flex-col gap-[1rem] items-end">
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={isPlaying ? 'Pause video' : 'Play video'}
+          className="flex items-center justify-center h-[4.6rem] w-[4.6rem] rounded-full bg-black/35 backdrop-blur-sm text-white border border-white/40 hover:bg-black/55 transition-colors cursor-pointer"
+        >
+          <svg viewBox="0 0 24 24" className="w-[2rem] h-[2rem]" fill="currentColor" aria-hidden="true">
+            {isPlaying ? <path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" /> : <path d="M8 5v14l11-7z" />}
+          </svg>
+        </button>
         <button
           type="button"
           onClick={toggleSound}
           aria-pressed={soundOn}
           aria-label={soundOn ? 'Turn video sound off' : 'Turn video sound on'}
-          className="absolute top-[calc(env(safe-area-inset-top,0px)+9.5rem)] right-[1.4rem] md:top-[11.5rem] md:right-[6rem] z-30 flex items-center gap-[0.9rem] h-[4.6rem] min-w-[4.6rem] justify-center px-[1.3rem] rounded-full bg-black/35 backdrop-blur-sm text-white border border-white/40 hover:bg-black/55 transition-colors cursor-pointer"
+          className="flex items-center gap-[0.9rem] h-[4.6rem] min-w-[4.6rem] justify-center px-[1.3rem] rounded-full bg-black/35 backdrop-blur-sm text-white border border-white/40 hover:bg-black/55 transition-colors cursor-pointer"
         >
           <svg
             viewBox="0 0 24 24"
@@ -231,7 +278,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {soundOn ? 'Sound on' : 'Sound off'}
           </span>
         </button>
-      )}
+      </div>
 
       {/* Faint warm overlay on top: rgba(68,76,53,0.12) */}
       <div
