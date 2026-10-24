@@ -232,18 +232,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </button>
       )}
 
-      {/* Controls: pause/play and sound. Autoplay with sound is blocked by most browsers until the visitor taps */}
+      {/* Sound control. Autoplay with sound is blocked by most browsers until the visitor taps */}
       <div className="absolute top-[calc(env(safe-area-inset-top,0px)+9.5rem)] right-[1.4rem] md:top-[11.5rem] md:right-[6rem] z-30 flex flex-col gap-[1rem] items-end">
-        <button
-          type="button"
-          onClick={togglePlay}
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
-          className="flex items-center justify-center h-[4.6rem] w-[4.6rem] rounded-full bg-black/35 backdrop-blur-sm text-white border border-white/40 hover:bg-black/55 transition-colors cursor-pointer"
-        >
-          <svg viewBox="0 0 24 24" className="w-[2rem] h-[2rem]" fill="currentColor" aria-hidden="true">
-            {isPlaying ? <path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" /> : <path d="M8 5v14l11-7z" />}
-          </svg>
-        </button>
         <button
           type="button"
           onClick={toggleSound}
