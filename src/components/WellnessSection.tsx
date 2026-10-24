@@ -9,7 +9,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
     <section id="wellness" className="w-full bg-white pt-[5rem] md:pt-[8rem] pb-[5rem] md:pb-[6rem] overflow-hidden">
       <div className="w-full max-w-[192rem] mx-auto">
         {/* DESKTOP VIEW (≥ 768px) */}
-        <div className="hidden md:block relative h-[132rem]">
+        <div className="hidden md:block relative h-[150rem]">
           {/* Half-viewport large photo flush to left edge (x=0) */}
           <div className="absolute left-0 top-[14rem] w-[94.5rem] h-[118rem] overflow-hidden border-0">
             <img
@@ -21,7 +21,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
           </div>
 
           {/* Overlapping square photo (cols 5–8: x=503 = 67rem, 435×435 = 58rem × 58rem), sitting 105px (14rem) higher */}
-          <div className="absolute left-[67rem] right-[6rem] top-0 h-[74rem] overflow-hidden border-0 z-10">
+          <div className="absolute left-[67rem] top-0 w-[58rem] h-[58rem] overflow-hidden border-0 z-10">
             <img
               src="/images/ota/ota-47.jpg"
               alt="Freeform designer pool at Jawai Retreat"
@@ -31,7 +31,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
           </div>
 
           {/* Sage Card in cols 5–12 (x=67rem, w=119rem) */}
-          <div className="absolute left-[67rem] right-[6rem] top-[66rem] bottom-0 bg-[#9BA08A] p-[5rem] z-20 flex flex-col justify-center">
+          <div className="absolute left-[67rem] right-[6rem] top-[50rem] bg-[#9BA08A] p-[6rem] z-20">
             {/* White centred H2 (45px / 6rem, 2 lines) */}
             <h2 className="section-h2 text-white text-center mb-[4rem]">
               THE BLUE HEART<br />FREEFORM DESIGNER POOL
