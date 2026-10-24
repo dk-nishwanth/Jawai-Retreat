@@ -8,12 +8,12 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
   onOpenBooking
 }) => {
   return (
-    <section id="overview" className="w-full bg-white pt-[6.5rem] md:pt-[15rem] pb-[10rem]">
+    <section id="overview" className="w-full bg-white pt-[6.5rem] md:pt-[8rem] pb-[6rem]">
       <div className="w-full max-w-[192rem] mx-auto px-[2.2rem] md:px-[6rem]">
         {/* 12-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[2.2rem] md:gap-[3rem]">
           {/* DESKTOP ROW 1: Two portrait photos side by side */}
-          <div className="hidden md:block md:col-start-5 md:col-span-4 w-full h-[69rem] overflow-hidden border-0">
+          <div className="hidden md:block md:col-start-5 md:col-span-4 w-full h-[48rem] overflow-hidden border-0">
             <img
               src="/images/ota/ota-04.jpg"
               alt="Jawai Retreat room interior and granite view"
@@ -22,7 +22,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
             />
           </div>
 
-          <div className="hidden md:block md:col-start-9 md:col-span-4 w-full h-[69rem] overflow-hidden border-0 md:mt-[3.5rem]">
+          <div className="hidden md:block md:col-start-9 md:col-span-4 w-full h-[48rem] overflow-hidden border-0 md:mt-[3.5rem]">
             <img
               src="/images/ota/ota-50.jpg"
               alt="Jawai Retreat landscaped pathway and farm approach"
@@ -32,7 +32,7 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
           </div>
 
           {/* DESKTOP ROW 2: Wide landscape photo in cols 5–12 */}
-          <div className="hidden md:block md:col-start-5 md:col-span-8 w-full h-[69rem] overflow-hidden border-0 mt-[3rem]">
+          <div className="hidden md:block md:col-start-5 md:col-span-8 w-full h-[48rem] overflow-hidden border-0 mt-[3rem]">
             <img
               src="/images/ota/ota-16.jpg"
               alt="Jawai Retreat courtyard and architecture with freeform pool"

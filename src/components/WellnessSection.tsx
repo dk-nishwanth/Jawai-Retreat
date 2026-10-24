@@ -6,7 +6,7 @@ interface WellnessSectionProps {
 
 export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section id="wellness" className="w-full bg-white pt-[6.5rem] md:pt-[15rem] pb-[10rem] overflow-hidden">
+    <section id="wellness" className="w-full bg-white pt-[6.5rem] md:pt-[8rem] pb-[6rem] overflow-hidden">
       <div className="w-full max-w-[192rem] mx-auto">
         {/* DESKTOP VIEW (≥ 768px) */}
         <div className="hidden md:block relative h-[150rem]">

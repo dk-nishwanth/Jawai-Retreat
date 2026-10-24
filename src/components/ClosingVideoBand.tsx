@@ -6,7 +6,7 @@ interface ClosingVideoBandProps {
 
 export const ClosingVideoBand: React.FC<ClosingVideoBandProps> = ({ onPlayVideo }) => {
   return (
-    <section className="relative w-full h-[42rem] md:h-[129rem] overflow-hidden select-none">
+    <section className="relative w-full h-[42rem] md:h-[70rem] overflow-hidden select-none">
       <img
         src="/images/ota/ota-24.jpg"
         alt="Jawai Retreat courtyard and granite hill dusk view"

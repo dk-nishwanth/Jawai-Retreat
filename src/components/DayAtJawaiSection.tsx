@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { JAWAI_DAYS, DayChapter, DayImage } from '../data/daysData';
 
-const STRIP_HEIGHT = 'h-[38rem] md:h-[52rem]';
+const STRIP_HEIGHT = 'h-[30rem] md:h-[44rem]';
 
 const ChapterStrip: React.FC<{
   chapter: DayChapter;
@@ -78,6 +78,7 @@ const ChapterStrip: React.FC<{
 
 export const DayAtJawaiSection: React.FC = () => {
   const [active, setActive] = useState<{ img: DayImage; chapter: DayChapter } | null>(null);
+  const [tab, setTab] = useState(0);
 
   useEffect(() => {
     if (!active) return;
@@ -95,29 +96,40 @@ export const DayAtJawaiSection: React.FC = () => {
   }, [active]);
 
   return (
-    <section id="a-day-at-jawai" className="w-full bg-[#FAF8F5] py-[7rem] md:py-[12rem]">
+    <section id="gallery" className="w-full bg-[#FAF8F5] py-[6rem] md:py-[9rem]">
       <div className="w-full max-w-[192rem] mx-auto px-[2.2rem] md:px-[6rem]">
-        <div className="max-w-[90rem] mb-[6rem] md:mb-[9rem]">
+        <div className="max-w-[90rem] mb-[3.5rem] md:mb-[5rem]">
           <span className="text-[1.3rem] uppercase font-semibold tracking-[0.1em] text-[#444C35]/70 block mb-[1.5rem]">
             A DAY AT JAWAI
           </span>
           <h2 className="section-h2 mb-[2.2rem]">
             THE ROOMS, THE TERRACES, THE HILLS.
           </h2>
-          <p className="lead-text">
+          <p className="body-p max-w-[70rem]">
             Details and views from Jawai Retreat, from carved jaali niches and private terraces to jeep drives through the granite hills and picnics at dusk.
           </p>
         </div>
 
-        <div className="flex flex-col gap-[7rem] md:gap-[11rem]">
-          {JAWAI_DAYS.map((chapter) => (
-            <ChapterStrip
+        <div className="flex flex-wrap gap-x-[3rem] gap-y-[1rem] border-b border-[#444C35]/20 mb-[3.5rem]">
+          {JAWAI_DAYS.map((chapter, i) => (
+            <button
               key={chapter.id}
-              chapter={chapter}
-              onOpen={(img, ch) => setActive({ img, chapter: ch })}
-            />
+              type="button"
+              onClick={() => setTab(i)}
+              className={`pb-[1.2rem] text-[1.2rem] md:text-[1.3rem] uppercase font-semibold tracking-[0.1em] cursor-pointer border-b-2 -mb-px transition-colors ${
+                tab === i ? 'border-[#444C35] text-[#444C35]' : 'border-transparent text-[#444C35]/50 hover:text-[#444C35]'
+              }`}
+            >
+              {chapter.label.replace(/^\d+ · /, '')}
+            </button>
           ))}
         </div>
+
+        <ChapterStrip
+          key={JAWAI_DAYS[tab].id}
+          chapter={JAWAI_DAYS[tab]}
+          onOpen={(img, ch) => setActive({ img, chapter: ch })}
+        />
       </div>
 
       {active && (

@@ -8,13 +8,10 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { IntroTextSection } from './components/IntroTextSection';
 import { EditorialAsymmetricSection } from './components/EditorialAsymmetricSection';
-import { FullBleedVideoBand } from './components/FullBleedVideoBand';
 import { WellnessSection } from './components/WellnessSection';
 import { RoomsSliderSection } from './components/RoomsSliderSection';
-import { VineyardTextSection } from './components/VineyardTextSection';
 import { CulinarySection } from './components/CulinarySection';
-import { ShortcutTeaserSection } from './components/ShortcutTeaserSection';
-import { ActiveHolidaySection } from './components/ActiveHolidaySection';
+import { JawaiExperienceSection } from './components/JawaiExperienceSection';
 import { ClosingVideoBand } from './components/ClosingVideoBand';
 import { DayAtJawaiSection } from './components/DayAtJawaiSection';
 import { FooterSection } from './components/FooterSection';
@@ -85,14 +82,6 @@ export default function App() {
           onOpenBooking={() => handleOpenBooking()}
         />
 
-        {/* SECTION 4: FULL-BLEED VIDEO BAND (~688px tall) */}
-        <FullBleedVideoBand
-          onPlayVideo={() => setIsVideoModalOpen(true)}
-          imageSrc="/images/ota/ota-25.jpg"
-          altText="Granite hills and retreat landscape near Jawai"
-          tagline="LEOPARDS, GRANITE HILLS & OPEN SKIES · JAWAI RETREAT FILM"
-        />
-
         {/* SECTION 5: WELLNESS / POOL (The Blue Heart Freeform Pool) */}
         <WellnessSection
           onOpenBooking={() => handleOpenBooking()}
@@ -104,21 +93,19 @@ export default function App() {
           onOpenAllRooms={() => setIsAllRoomsModalOpen(true)}
         />
 
-        {/* SECTION 7: VINEYARD / GRANITE TEXT */}
-        <VineyardTextSection />
-
         {/* SECTION 8: CULINARY (Farm to table, pure vegetarian Marwari meals) */}
         <CulinarySection
           onOpenBooking={() => handleOpenBooking()}
         />
 
         {/* SECTION 9: SHORTCUT / TEASER (Leopard safaris & Rabari coexistence) */}
-        <ShortcutTeaserSection
+        <JawaiExperienceSection
+          onOpenRooms={() => setIsAllRoomsModalOpen(true)}
           onOpenDiscover={() => setIsExperiencesModalOpen(true)}
+          onOpenEnquire={() => handleOpenEnquire()}
         />
 
         {/* SECTION 10: ACTIVE HOLIDAY / EXPERIENCES STATEMENT */}
-        <ActiveHolidaySection />
 
         {/* SECTION 10b: A DAY AT JAWAI (guest photo story) */}
         <DayAtJawaiSection />
