@@ -16,6 +16,7 @@ import { CulinarySection } from './components/CulinarySection';
 import { ShortcutTeaserSection } from './components/ShortcutTeaserSection';
 import { ActiveHolidaySection } from './components/ActiveHolidaySection';
 import { ClosingVideoBand } from './components/ClosingVideoBand';
+import { DayAtJawaiSection } from './components/DayAtJawaiSection';
 import { FooterSection } from './components/FooterSection';
 import { VideoModal } from './components/VideoModal';
 import { RoomDetailModal } from './components/RoomDetailModal';
@@ -118,6 +119,9 @@ export default function App() {
 
         {/* SECTION 10: ACTIVE HOLIDAY / EXPERIENCES STATEMENT */}
         <ActiveHolidaySection />
+
+        {/* SECTION 10b: A DAY AT JAWAI (guest photo story) */}
+        <DayAtJawaiSection />
 
         {/* SECTION 11: CLOSING FULL-BLEED VIDEO BAND */}
         <ClosingVideoBand
