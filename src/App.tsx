@@ -91,6 +91,7 @@ export default function App() {
         <RoomsSliderSection
           onSelectRoom={(room) => setSelectedRoomForModal(room)}
           onOpenAllRooms={() => setIsAllRoomsModalOpen(true)}
+          onEnquire={() => handleOpenEnquire()}
         />
 
         {/* SECTION 8: CULINARY (Farm to table, pure vegetarian Marwari meals) */}

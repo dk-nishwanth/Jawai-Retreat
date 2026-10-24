@@ -265,3 +265,35 @@ body {
   .room-meta { color: #ffffff; }
   .footer-text { color: var(--olive); }
 }
+
+
+/* ---------- Mobile usability (touch targets, no iOS input zoom) ---------- */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  [aria-label="Close"],
+  [aria-label="Close popup"],
+  [aria-label="Open menu"],
+  [aria-label="Close menu"] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .cta-link {
+    padding-block: 1.5rem;
+  }
+
+  footer a,
+  footer button {
+    display: inline-block;
+    padding-block: 1.4rem;
+  }
+
+  .header-nav-link {
+    padding-block: 1.4rem;
+  }
+}

@@ -212,7 +212,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
           <div>
             © 2026 Jawai Retreat. All rights reserved.
           </div>
-          <div className="text-[1.1rem] opacity-75 uppercase tracking-wider">
+          <div className="text-[1.2rem] opacity-80 uppercase tracking-wider">
             Boutique wilderness retreat in Pali District, Rajasthan
           </div>
         </div>

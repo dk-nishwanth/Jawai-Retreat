@@ -189,7 +189,7 @@ export const BookingDrawer: React.FC<BookingDrawerProps> = ({
                   FULL NAME *
                 </label>
                 <input
-                  type="text"
+                  type="text" autoComplete="name"
                   required
                   placeholder="e.g. Maria Rossi"
                   value={fullName}
@@ -202,7 +202,7 @@ export const BookingDrawer: React.FC<BookingDrawerProps> = ({
                   EMAIL ADDRESS *
                 </label>
                 <input
-                  type="email"
+                  type="email" autoComplete="email" inputMode="email"
                   required
                   placeholder="e.g. maria@example.com"
                   value={email}
@@ -217,7 +217,7 @@ export const BookingDrawer: React.FC<BookingDrawerProps> = ({
                 PHONE / MOBILE
               </label>
               <input
-                type="tel"
+                type="tel" autoComplete="tel" inputMode="tel"
                 placeholder="e.g. +39 0473 123456"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}

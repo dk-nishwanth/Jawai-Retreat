@@ -74,8 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [lang, setLang] = useState<'EN' | 'HI'>('EN');
-
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 60);
@@ -252,7 +251,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div
           className={`absolute bottom-0 right-0 h-full w-full md:w-[65%] bg-[#E1D7CB] text-[#444C35] transition-transform duration-[700ms] ease-[cubic-bezier(0.76,0,0.24,1)] overflow-y-auto ${drawerOpen ? 'translate-y-0 delay-[120ms]' : 'translate-y-full delay-0'}`}
         >
-          <div className="min-h-full flex flex-col justify-between px-[4rem] md:px-[9rem] pt-[16rem] md:pt-[17rem] pb-[10rem] md:pb-[5rem]">
+          <div className="min-h-full flex flex-col justify-between px-[4rem] md:px-[9rem] pt-[11rem] md:pt-[17rem] pb-[11rem] md:pb-[5rem]">
             <nav className="flex flex-col gap-[1.6rem] md:gap-[1.8rem]" aria-label="Main menu">
               {MENU_LINKS.map((item, i) => (
                 <a
@@ -267,7 +266,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     }
                   }}
                   style={{ transitionDelay: drawerOpen ? `${450 + i * 60}ms` : '0ms' }}
-                  className={`block w-fit text-[2.6rem] md:text-[4.5rem] uppercase font-semibold tracking-[0.03em] leading-tight transition-all duration-500 hover:translate-x-[1.5rem] hover:text-[#CD754D] ${drawerOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[3rem]'}`}
+                  className={`block w-fit py-[0.4rem] md:py-0 text-[2.6rem] md:text-[4.5rem] uppercase font-semibold tracking-[0.03em] leading-tight transition-all duration-500 hover:translate-x-[1.5rem] hover:text-[#CD754D] ${drawerOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[3rem]'}`}
                 >
                   {item.label}
                 </a>
@@ -278,23 +277,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               style={{ transitionDelay: drawerOpen ? `${450 + MENU_LINKS.length * 60}ms` : '0ms' }}
               className={`pt-[3rem] mt-[3rem] border-t border-[#444C35]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-[2rem] footer-text uppercase font-semibold transition-all duration-500 ${drawerOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[2rem]'}`}
             >
-              <div className="flex items-center gap-[2rem]">
-                <button
-                  type="button"
-                  onClick={() => setLang('EN')}
-                  className={`cursor-pointer ${lang === 'EN' ? 'font-bold underline' : 'opacity-60'}`}
-                >
-                  EN
-                </button>
-                <span>·</span>
-                <button
-                  type="button"
-                  onClick={() => setLang('HI')}
-                  className={`cursor-pointer ${lang === 'HI' ? 'font-bold underline' : 'opacity-60'}`}
-                >
-                  HI
-                </button>
-              </div>
               <div className="text-[1.3rem] font-normal normal-case opacity-80">
                 Jawai Bandh Road, Pali District, Rajasthan · +91 96360 85370
               </div>

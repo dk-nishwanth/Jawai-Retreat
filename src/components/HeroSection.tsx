@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute inset-x-0 bottom-0 h-[25rem] bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
 
       {/* Hero h1 caption: centred at the bottom (11.25px / 1.5rem desktop, 13px / 1.2rem mobile, tracking 0.1em desktop / 0.07em mobile) */}
-      <div className="absolute bottom-[6rem] md:bottom-[4.5rem] left-1/2 -translate-x-1/2 md:left-[6rem] md:translate-x-0 w-[90vw] md:w-[75rem] text-center md:text-left z-20 pointer-events-none">
+      <div className="absolute bottom-[8.5rem] md:bottom-[4.5rem] left-1/2 -translate-x-1/2 md:left-[6rem] md:translate-x-0 w-[90vw] md:w-[75rem] text-center md:text-left z-20 pointer-events-none">
         <h1 className="hero-caption md:!text-left">
           JAWAI RETREAT.<br />
           TWO INTIMATE STAYS, SLOW MEALS, GRANITE VIEWS, AND LAKESIDE SAFARIS.
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <aside
           role="complementary"
           aria-label="Jawai Retreat Stay Offer"
-          className={`fixed md:absolute bottom-[11.5rem] sm:bottom-[3rem] left-[1.4rem] right-[1.4rem] sm:left-auto sm:right-[3rem] z-30 sm:w-[96rem] bg-[#9BA08A] text-white p-[1.6rem] pr-[4rem] sm:p-[3.5rem] border border-white/60 animate-in fade-in duration-300`}
+          className={`absolute bottom-[17.5rem] sm:bottom-[3rem] left-[1.4rem] right-[1.4rem] sm:left-auto sm:right-[3rem] z-30 sm:w-[96rem] bg-[#9BA08A] text-white p-[1.6rem] pr-[4rem] sm:p-[3.5rem] border border-white/60 animate-in fade-in duration-300`}
         >
           {/* Close button */}
           <button

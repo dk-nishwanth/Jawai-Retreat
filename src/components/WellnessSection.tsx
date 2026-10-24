@@ -23,7 +23,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
           {/* Overlapping square photo (cols 5–8: x=503 = 67rem, 435×435 = 58rem × 58rem), sitting 105px (14rem) higher */}
           <div className="absolute left-[67rem] top-0 w-[58rem] h-[58rem] overflow-hidden border-0 z-10">
             <img
-              src="/images/ota/ota-49.jpg"
+              src="/images/days/pool-aerial.jpg"
               alt="Luxury Room with Private Pool poolside seating"
               className="w-full h-full object-cover object-center"
               referrerPolicy="no-referrer"
@@ -61,8 +61,8 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
         <div className="md:hidden px-[2.2rem] flex flex-col items-center">
           <div className="w-[26.5rem] h-[26.5rem] overflow-hidden z-10 mb-[-6rem]">
             <img
-              src="/images/ota/ota-49.jpg"
-              alt="Poolside seating"
+              src="/images/days/pool-aerial.jpg"
+              alt="Aerial view of the heart-shaped designer pool at Jawai Retreat"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />

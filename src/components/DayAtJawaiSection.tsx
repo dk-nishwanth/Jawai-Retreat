@@ -116,7 +116,7 @@ export const DayAtJawaiSection: React.FC = () => {
               key={chapter.id}
               type="button"
               onClick={() => setTab(i)}
-              className={`pb-[1.2rem] text-[1.2rem] md:text-[1.3rem] uppercase font-semibold tracking-[0.1em] cursor-pointer border-b-2 -mb-px transition-colors ${
+              className={`pb-[1.2rem] text-[1.2rem] md:text-[1.3rem] uppercase font-semibold tracking-[0.1em] cursor-pointer min-h-[4.4rem] md:min-h-0 flex items-end border-b-2 -mb-px transition-colors ${
                 tab === i ? 'border-[#444C35] text-[#444C35]' : 'border-transparent text-[#444C35]/50 hover:text-[#444C35]'
               }`}
             >
