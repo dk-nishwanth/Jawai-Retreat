@@ -31,7 +31,7 @@ export const CookiePreferencesModal: React.FC<CookiePreferencesModalProps> = ({
         </div>
 
         <p className="text-[1.4rem] leading-relaxed text-[#444C35] mb-[2.5rem] font-normal">
-          We use cookies to enhance website navigation, analyze site usage, and assist in our marketing efforts for the feel good Resort Johannis.
+          We use cookies to enhance website navigation, analyze site usage, and assist in our marketing efforts for Jawai Retreat.
         </p>
 
         <div className="space-y-[1.5rem] mb-[3rem]">

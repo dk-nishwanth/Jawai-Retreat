@@ -1,4 +1,5 @@
 import React from 'react';
+import { PHONE_TEL, PHONE_DISPLAY, EMAIL, WA_EXISTING_BOOKING, WA_CHANGE_CANCEL } from '../constants/contact';
 
 interface FooterSectionProps {
   onOpenBooking: () => void;
@@ -107,8 +108,8 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               Pali District, Rajasthan, India
             </p>
             <div className="space-y-[0.4rem] text-[1.4rem] font-semibold uppercase tracking-[0.05em]">
-              <a href="tel:+919636085370" className="hover:underline block font-bold">
-                Phone: +91 96360 85370
+              <a href={PHONE_TEL} className="hover:underline block font-bold">
+                Phone: {PHONE_DISPLAY}
               </a>
               <span className="opacity-80 block normal-case">
                 Granite views & lakeside leopard safaris
@@ -157,17 +158,19 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                 CONTACT & INQUIRIES
               </span>
               <div className="leading-relaxed normal-case">
-                <a href="tel:+919636085370" className="font-semibold block hover:underline">
-                  +91 96360 85370
+                <a href={PHONE_TEL} className="font-semibold block hover:underline">
+                  {PHONE_DISPLAY}
                 </a>
-                <a href="mailto:reservations@jawairetreat.com" className="block hover:underline">
-                  reservations@jawairetreat.com
+                <a href={`mailto:${EMAIL}`} className="block hover:underline">
+                  {EMAIL}
                 </a>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-[1rem] text-[1.3rem] opacity-80 pt-[1rem]">
-              <a href="#footer" className="hover:underline">Imprint</a>
+              <a href={WA_EXISTING_BOOKING} target="_blank" rel="noopener noreferrer" className="hover:underline">Already booked?</a>
+              <span>·</span>
+              <a href={WA_CHANGE_CANCEL} target="_blank" rel="noopener noreferrer" className="hover:underline">Change or cancel</a>
               <span>·</span>
               <a href="#footer" className="hover:underline">Privacy Policy</a>
               <span>·</span>
@@ -193,8 +196,8 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             <a href="#about" className="hover:underline">ABOUT US</a>
           </div>
 
-          <a href="tel:+919636085370" className="font-semibold text-[1.5rem]">
-            +91 96360 85370
+          <a href={PHONE_TEL} className="font-semibold text-[1.5rem]">
+            {PHONE_DISPLAY}
           </a>
 
           <div className="flex flex-wrap justify-center gap-[1.2rem] text-[1.2rem] opacity-75 uppercase">

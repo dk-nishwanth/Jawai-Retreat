@@ -70,8 +70,8 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
           </ul>
 
           <div className="p-[2rem] bg-[#FAF8F5] border border-[#E1D7CB] text-[1.3rem] text-[#444C35] leading-relaxed">
-            <span className="font-semibold block mb-[0.4rem]">JOHANNIS INCLUSIVE SERVICES:</span>
-            Alpine-Mediterranean gourmet breakfast on the sun terrace, daily afternoon cake buffet, unlimited access to the 3,000m² wellness & 25m heated infinity pool, fluffy bathrobes in wellness bag, and complimentary South Tyrol Guest Pass for all trains & buses.
+            <span className="font-semibold block mb-[0.4rem]">WHAT'S INCLUDED:</span>
+            Breakfast and dinner on the MAP plan with farm-led vegetarian meals, access to the freeform designer pool for staying guests, and a private balcony or pool facing the Jawai granite hills.
           </div>
         </div>
 

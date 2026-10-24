@@ -21,10 +21,10 @@ export const AllRoomsModal: React.FC<AllRoomsModalProps> = ({
         <div className="p-[3rem] border-b border-[#E1D7CB] flex items-center justify-between bg-[#FAF8F5]">
           <div>
             <span className="text-[1.2rem] uppercase font-semibold tracking-[0.1em] text-[#444C35]/70 block mb-[0.5rem]">
-              FEEL GOOD RESORT JOHANNIS · TIROLO
+              JAWAI RETREAT · PALI DISTRICT, RAJASTHAN
             </span>
             <h3 className="text-[2.2rem] md:text-[3rem] uppercase font-semibold tracking-[0.03em] text-[#444C35]">
-              ALL 14 ROOMS & SUITES
+              SIX ROOMS · TWO WAYS TO STAY
             </h3>
           </div>
           <button

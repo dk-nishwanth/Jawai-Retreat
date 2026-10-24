@@ -25,18 +25,18 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
         <div className="relative w-full aspect-video overflow-hidden">
           <img
             src="/images/ota/ota-25.jpg"
-            alt="Johannis Resort cinematic feel-good experience"
+            alt="Granite hills and the Jawai Retreat landscape at dusk"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/35 flex flex-col items-center justify-center text-center p-[3rem] md:p-[6rem]">
             <span className="font-script text-white text-[3rem] md:text-[5rem] mb-[1.5rem] font-normal">
-              feel good resort johannis
+              Jawai Retreat
             </span>
             <h3 className="text-white text-[2rem] md:text-[3.5rem] uppercase font-semibold tracking-[0.1em] mb-[2rem]">
-              MOMENTS IN PARADISE BETWEEN MOUNTAINS AND PALM TREES
+              GRANITE HILLS, LEOPARD COUNTRY & SLOW DAYS
             </h3>
             <p className="text-white/80 text-[1.4rem] md:text-[1.8rem] max-w-[65rem] mb-[3rem] leading-relaxed">
-              Experience the gentle mountain breeze, Mediterranean flora, and the quiet waters of our panoramic infinity pool.
+              Wake up to granite hills, wild leopard country and farm-fresh Marwari breakfasts under open skies.
             </p>
             <button
               onClick={onClose}
