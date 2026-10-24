@@ -70,7 +70,7 @@ export const AllRoomsModal: React.FC<AllRoomsModalProps> = ({
                 </div>
 
                 <div className="flex items-center justify-between pt-[1.2rem] border-t border-[#E1D7CB]/60 text-[1.4rem] font-semibold text-[#444C35]">
-                  <span>{room.price}</span>
+                  <span>{room.size}</span>
                   <span className="text-[1.2rem] uppercase tracking-wider underline">DETAILS →</span>
                 </div>
               </div>

@@ -59,8 +59,6 @@ export const RoomsSliderSection: React.FC<RoomsSliderSectionProps> = ({
               <span>{activeRoom.persons}</span>
               <span aria-hidden="true">·</span>
               <span>{activeRoom.size}</span>
-              <span aria-hidden="true">·</span>
-              <span className="font-semibold">{activeRoom.price}</span>
             </p>
           </div>
         </div>

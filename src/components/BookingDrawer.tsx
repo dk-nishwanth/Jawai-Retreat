@@ -38,6 +38,22 @@ export const BookingDrawer: React.FC<BookingDrawerProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email) return;
+    const lines = [
+      `Hi! I would like to ${mode === 'enquire' ? 'enquire about' : 'book'} a stay at Jawai Retreat.`,
+      `Name: ${fullName}`,
+      `Room: ${currentRoom.name}`,
+      `Arrival: ${arrival}`,
+      `Departure: ${departure}`,
+      `Guests: ${adults} adult(s), ${children} child(ren)`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : '',
+      notes ? `Notes: ${notes}` : '',
+    ].filter(Boolean);
+    window.open(
+      `https://wa.me/919636085370?text=${encodeURIComponent(lines.join('\n'))}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
     setSubmitted(true);
   };
 
@@ -73,7 +89,7 @@ export const BookingDrawer: React.FC<BookingDrawerProps> = ({
               THANK YOU, {fullName}!
             </h4>
             <p className="text-[1.4rem] leading-relaxed max-w-[55rem] mx-auto mb-[3rem] text-[#444C35]">
-              Your inquiry for <strong>{currentRoom.name}</strong> from {arrival} to {departure} has been sent directly to the Schupfer family. We will respond promptly with a personalized quote and best-rate guarantee to <strong>{email}</strong>.
+              Your inquiry for <strong>{currentRoom.name}</strong> from {arrival} to {departure} has been prepared in WhatsApp for Jawai Retreat. Please press send in WhatsApp to confirm it. We will respond promptly with a personalised quote at <strong>{email}</strong>.
             </p>
             <button
               type="button"
@@ -126,7 +142,7 @@ export const BookingDrawer: React.FC<BookingDrawerProps> = ({
               >
                 {ROOMS_EXACT_LIST.map((r) => (
                   <option key={r.id} value={r.id}>
-                    {r.name} ({r.size} · {r.price})
+                    {r.name} ({r.size})
                   </option>
                 ))}
               </select>

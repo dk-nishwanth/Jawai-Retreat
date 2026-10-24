@@ -44,8 +44,6 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
               <span>{room.persons}</span>
               <span>·</span>
               <span>{room.size}</span>
-              <span>·</span>
-              <span className="font-semibold">{room.price}</span>
             </div>
           </div>
         </div>
@@ -80,7 +78,7 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
         {/* Footer Actions */}
         <div className="p-[2rem] md:p-[3rem] bg-white border-t border-[#E1D7CB] flex items-center justify-between gap-[2rem]">
           <div className="text-[1.4rem] font-semibold uppercase tracking-wider text-[#444C35]">
-            Rate: <span className="text-[1.8rem] font-bold">{room.price}</span> / night
+            {room.size}
           </div>
           <div className="flex gap-[1.5rem]">
             <button
