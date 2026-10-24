@@ -18,45 +18,79 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
       <div className="w-full max-w-[192rem] mx-auto px-[2.2rem] md:px-[6rem]">
         {/* About Us & Arrival Banner */}
         <div id="about" className="mb-[6rem] p-[3rem] md:p-[5rem] bg-[#FAF8F5] border border-[#E1D7CB]">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-[3rem] items-start">
-            <div className="md:col-span-6">
-              <span className="text-[1.2rem] uppercase font-semibold tracking-[0.1em] text-[#444C35]/70 block mb-[1rem]">
-                ABOUT US · ARRIVAL & ACCESS
-              </span>
-              <h3 className="section-h2 mb-[1.5rem] text-[2.2rem] md:text-[3.2rem]">
-                FIND US IN JAWAI
-              </h3>
-              <p className="footer-text mb-[2rem]">
-                A quiet hideaway between granite hills and wild country.<br />
-                <strong>Jawai Bandh Road, Pali District, Rajasthan</strong>
-              </p>
-              <p className="footer-text text-[#444C35]/80">
-                Use the map for live navigation, or check the simplest route by road, rail, or flight before you travel. Private transfers can be arranged with advance notice.
-              </p>
-            </div>
+          <div className="max-w-[90rem]">
+            <span className="text-[1.2rem] uppercase font-semibold tracking-[0.1em] text-[#444C35]/70 block mb-[1rem]">
+              ABOUT US · ARRIVAL & ACCESS
+            </span>
+            <h3 className="section-h2 mb-[1.5rem] text-[2.2rem] md:text-[3.2rem]">
+              FIND US IN JAWAI
+            </h3>
+            <p className="footer-text mb-[1.6rem]">
+              A quiet hideaway between granite hills and wild country.<br />
+              <strong>Jawai Bandh Road, Pali District, Rajasthan</strong>
+            </p>
+            <p className="footer-text text-[#444C35]/80">
+              Use the map for live navigation, or check the simplest route by road, rail, or flight before you travel. Private transfers can be arranged with advance notice.
+            </p>
+          </div>
 
-            <div className="md:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-[2rem] pt-[1rem]">
-              <div className="border border-[#E1D7CB] p-[2rem] bg-white">
-                <span className="text-[1.2rem] font-bold uppercase tracking-wider block mb-[0.6rem]">FLIGHT</span>
-                <p className="text-[1.2rem] leading-[1.5] text-[#444C35]/80">
-                  Fly into Udaipur or Jodhpur Airport (2.5 to 3.5 hours by road).
-                </p>
+          <div className="mt-[3.5rem] grid grid-cols-1 md:grid-cols-3 gap-[2rem] md:gap-[3rem]">
+            {[
+              {
+                title: 'FLIGHT',
+                text: 'Fly into Udaipur or Jodhpur Airport (2.5 to 3.5 hours by road).',
+                icon: (
+                  <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+                ),
+              },
+              {
+                title: 'TRAIN',
+                text: 'Jawai Bandh and Falna stations connect directly from Delhi, Mumbai, Ahmedabad.',
+                icon: (
+                  <>
+                    <rect x="4" y="3" width="16" height="16" rx="2" />
+                    <path d="M4 11h16M12 3v8M8 19l-2 3M18 22l-2-3M8 15h.01M16 15h.01" />
+                  </>
+                ),
+              },
+              {
+                title: 'ROAD',
+                text: 'Smooth highway access from Udaipur, Jodhpur, Mount Abu and Ranakpur.',
+                icon: (
+                  <>
+                    <path d="M4 22 8 2M20 22 16 2M12 6v2M12 12v2M12 18v2" />
+                  </>
+                ),
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="border border-[#E1D7CB] border-t-[4px] border-t-[#444C35] bg-white p-[2.4rem] md:p-[3rem] flex gap-[1.8rem] items-start shadow-sm"
+              >
+                <div className="shrink-0 w-[5.2rem] h-[5.2rem] rounded-full bg-[#444C35] text-white flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-[2.6rem] h-[2.6rem]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    {item.icon}
+                  </svg>
+                </div>
+                <div>
+                  <span className="text-[1.6rem] md:text-[1.8rem] font-bold uppercase tracking-[0.08em] block mb-[0.8rem] text-[#444C35]">
+                    {item.title}
+                  </span>
+                  <p className="text-[1.5rem] md:text-[1.7rem] leading-[1.5] text-[#444C35]">
+                    {item.text}
+                  </p>
+                </div>
               </div>
-
-              <div className="border border-[#E1D7CB] p-[2rem] bg-white">
-                <span className="text-[1.2rem] font-bold uppercase tracking-wider block mb-[0.6rem]">TRAIN</span>
-                <p className="text-[1.2rem] leading-[1.5] text-[#444C35]/80">
-                  Jawai Bandh and Falna stations connect directly from Delhi, Mumbai, Ahmedabad.
-                </p>
-              </div>
-
-              <div className="border border-[#E1D7CB] p-[2rem] bg-white">
-                <span className="text-[1.2rem] font-bold uppercase tracking-wider block mb-[0.6rem]">ROAD</span>
-                <p className="text-[1.2rem] leading-[1.5] text-[#444C35]/80">
-                  Smooth highway access from Udaipur, Jodhpur, Mount Abu and Ranakpur.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
