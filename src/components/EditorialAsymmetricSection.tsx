@@ -24,8 +24,8 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
 
           <div className="hidden md:block md:col-start-9 md:col-span-4 w-full h-[48rem] overflow-hidden border-0 md:mt-[3.5rem]">
             <img
-              src="/images/ota/ota-50.jpg"
-              alt="Jawai Retreat landscaped pathway and farm approach"
+              src="/images/days/safari-lake.jpg"
+              alt="Open safari jeep on the granite hills near Jawai Retreat"
               className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
             />

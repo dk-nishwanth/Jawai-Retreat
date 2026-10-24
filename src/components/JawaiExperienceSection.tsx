@@ -55,9 +55,9 @@ export const JawaiExperienceSection: React.FC<JawaiExperienceSectionProps> = ({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2.4rem] md:gap-[3rem]">
+        <div className="flex md:grid md:grid-cols-3 gap-[1.6rem] md:gap-[3rem] overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-[2.2rem] px-[2.2rem] md:mx-0 md:px-0 pb-[1rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {CARDS.map((card) => (
-            <article key={card.title} className="group flex flex-col border border-[#E1D7CB] bg-white">
+            <article key={card.title} className="group flex flex-col border border-[#E1D7CB] bg-white shrink-0 w-[78vw] sm:w-[46vw] md:w-auto snap-start">
               <div className="w-full aspect-[4/3] overflow-hidden bg-[#FAF8F5]">
                 <img
                   src={card.image}
