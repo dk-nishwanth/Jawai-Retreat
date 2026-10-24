@@ -6,7 +6,7 @@ interface WellnessSectionProps {
 
 export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section id="wellness" className="w-full bg-white pt-[6.5rem] md:pt-[8rem] pb-[6rem] overflow-hidden">
+    <section id="wellness" className="w-full bg-white pt-[5rem] md:pt-[8rem] pb-[5rem] md:pb-[6rem] overflow-hidden">
       <div className="w-full max-w-[192rem] mx-auto">
         {/* DESKTOP VIEW (≥ 768px) */}
         <div className="hidden md:block relative h-[150rem]">
@@ -58,8 +58,8 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
         </div>
 
         {/* MOBILE VIEW (< 768px) */}
-        <div className="md:hidden px-[2.2rem] flex flex-col items-center">
-          <div className="w-[26.5rem] h-[26.5rem] overflow-hidden z-10 mb-[-6rem]">
+        <div className="md:hidden px-[2.2rem] flex flex-col gap-[1.2rem]">
+          <div className="w-full aspect-[4/3] overflow-hidden">
             <img
               src="/images/days/pool-aerial.jpg"
               alt="Aerial view of the heart-shaped designer pool at Jawai Retreat"
@@ -68,7 +68,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
             />
           </div>
 
-          <div className="w-full h-[45.5rem] overflow-hidden">
+          <div className="w-full aspect-[4/3] overflow-hidden">
             <img
               src="/images/ota/ota-47.jpg"
               alt="The Blue Heart Designer Pool"
@@ -77,7 +77,7 @@ export const WellnessSection: React.FC<WellnessSectionProps> = ({ onOpenBooking 
             />
           </div>
 
-          <div className="w-full bg-[#9BA08A] p-[3rem] text-white mt-[2rem]">
+          <div className="w-full bg-[#9BA08A] p-[2.6rem] text-white">
             <h2 className="section-h2 text-white text-center mb-[2rem]">
               THE BLUE HEART · DESIGNER POOL
             </h2>

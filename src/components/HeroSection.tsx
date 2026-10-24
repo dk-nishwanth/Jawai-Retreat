@@ -242,7 +242,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <h2 className="popup-h3 max-sm:!text-[2rem] mb-[0.8rem] sm:mb-[1.2rem]">
                 SLOW DAYS, SAFARI MORNINGS.
               </h2>
-              <p className="popup-p max-sm:!text-[1.3rem] max-sm:!leading-snug mb-[0.8rem] max-sm:mb-[1rem]">
+              <p className="popup-p max-sm:hidden mb-[0.8rem] max-sm:mb-[1rem]">
                 Wake up to dramatic granite hills, wild leopard country, and farm-fresh Marwari breakfasts under open skies.
               </p>
               <p className="max-sm:hidden popup-p mb-[1.6rem] opacity-90">

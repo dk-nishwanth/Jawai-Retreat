@@ -35,16 +35,14 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
             className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
           <div className="absolute bottom-[1.6rem] md:bottom-[2.5rem] left-[2rem] md:left-[2.5rem] right-[2rem] md:right-[2.5rem] text-white">
             <h3 className="text-[1.9rem] md:text-[3.6rem] leading-[1.1] uppercase font-semibold tracking-[0.03em] mb-[0.6rem] pr-[4rem]">
               {room.name}
             </h3>
-            <div className="text-[1.3rem] md:text-[1.6rem] text-white/95 flex gap-[1.5rem] font-normal">
-              <span>{room.persons}</span>
-              <span>·</span>
-              <span>{room.size}</span>
-            </div>
+            <p className="text-[1.2rem] md:text-[1.6rem] leading-snug text-white/95 font-normal">
+              {room.persons} · {room.size}
+            </p>
           </div>
         </div>
 
@@ -76,15 +74,15 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="p-[2rem] md:p-[3rem] bg-white border-t border-[#E1D7CB] flex items-center justify-between gap-[2rem]">
-          <div className="text-[1.4rem] font-semibold uppercase tracking-wider text-[#444C35]">
+        <div className="p-[1.6rem] md:p-[3rem] bg-white border-t border-[#E1D7CB] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[1.2rem] sm:gap-[2rem]">
+          <div className="hidden sm:block text-[1.4rem] font-semibold uppercase tracking-wider text-[#444C35]">
             {room.size}
           </div>
-          <div className="flex gap-[1.5rem]">
+          <div className="grid grid-cols-2 sm:flex gap-[1rem] sm:gap-[1.5rem]">
             <button
               type="button"
               onClick={onClose}
-              className="text-[1.3rem] uppercase font-semibold tracking-[0.1em] px-[2.5rem] py-[1.2rem] border border-[#444C35] text-[#444C35] hover:bg-neutral-100 cursor-pointer"
+              className="min-w-0 text-[1.2rem] md:text-[1.3rem] uppercase font-semibold tracking-[0.08em] px-[1.2rem] md:px-[2.5rem] py-[1.4rem] border border-[#444C35] text-[#444C35] hover:bg-neutral-100 cursor-pointer"
             >
               CLOSE
             </button>
@@ -94,7 +92,7 @@ export const RoomDetailModal: React.FC<RoomDetailModalProps> = ({
                 onClose();
                 onBook(room);
               }}
-              className="text-[1.3rem] uppercase font-semibold tracking-[0.1em] px-[3.5rem] py-[1.2rem] bg-[#444C35] text-white hover:bg-black cursor-pointer"
+              className="min-w-0 text-[1.2rem] md:text-[1.3rem] uppercase font-semibold tracking-[0.08em] px-[1.2rem] md:px-[3.5rem] py-[1.4rem] bg-[#444C35] text-white hover:bg-black cursor-pointer"
             >
               BOOK DIRECTLY
             </button>
