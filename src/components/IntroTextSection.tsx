@@ -13,13 +13,22 @@ export const IntroTextSection: React.FC<IntroTextSectionProps> = ({ onOverviewCl
           {/* Columns 3–10 (x=274, w=893) */}
           <div className="col-span-1 md:col-start-3 md:col-span-8 flex flex-col items-start">
             <span className="text-[1.3rem] uppercase font-semibold tracking-[0.1em] text-[#444C35]/70 block mb-[2rem]">
-              BOUTIQUE WILDERNESS RETREAT · PALI DISTRICT, RAJASTHAN
+              WHERE LUXURY MEETS THE UNTAMED WILD · JAWAI, RAJASTHAN
             </span>
-            <p className="lead-text mb-[3rem] md:mb-[4rem]">
-              Two intimate stays, slow meals, granite views, and easy access to Jawai's lakeside safaris. Room information for slow days and safari mornings. Each stay includes generous room proportions, private outdoor space, attached bathrooms, and MAP dining with breakfast and dinner.
-            </p>
+            <div className="lead-text mb-[3rem] md:mb-[4rem] space-y-[1.4rem] md:space-y-[2rem]">
+              <p>Khamma Ghani. Jawai Retreat welcomes you.</p>
+              <p>
+                A luxury resort where granite hills rise into open skies, and every guest is treated like family.
+              </p>
+              <p>
+                Mornings belong to the safari, afternoons to Jawai’s only freeform pool, and evenings to a farm-to-table feast of authentic Rajasthani flavours beneath the stars.
+              </p>
+              <p>
+                Come to unwind, to celebrate, or simply to slow down, and leave with a stay you’ll talk about for years.
+              </p>
+            </div>
 
-            {/* CTA text link ("● AN OVERVIEW"): 15px (2rem desktop / 1.4rem mobile), weight 600, uppercase, tracking 0.1em/0.07em */}
+            {/* CTA text link ("● MEET JAWAI RETREAT"): 15px (2rem desktop / 1.4rem mobile), weight 600, uppercase, tracking 0.1em/0.07em */}
             <a
               href="#overview"
               onClick={onOverviewClick}
@@ -27,7 +36,7 @@ export const IntroTextSection: React.FC<IntroTextSectionProps> = ({ onOverviewCl
             >
               <span className="bullet-dot group-hover:scale-125" />
               <span className="relative">
-                AN OVERVIEW
+                MEET JAWAI RETREAT
                 <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#444C35] transition-all duration-300 group-hover:w-full" />
               </span>
             </a>
