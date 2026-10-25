@@ -51,6 +51,14 @@ export const EditorialAsymmetricSection: React.FC<EditorialAsymmetricSectionProp
                 referrerPolicy="no-referrer"
               />
             </div>
+            <div className="w-full aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/days/safari-lake.jpg"
+                alt="Open safari jeep on the granite hills near Jawai Retreat"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <div className="w-full aspect-[3/2] overflow-hidden">
               <img
                 src="/images/ota/ota-16.jpg"

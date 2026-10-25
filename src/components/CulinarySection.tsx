@@ -49,6 +49,14 @@ export const CulinarySection: React.FC<CulinarySectionProps> = ({ onOpenBooking 
                 referrerPolicy="no-referrer"
               />
             </div>
+            <div className="w-full aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/ota/ota-19.jpg"
+                alt="Jawai Retreat landscaped pathway and farm approach"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <div className="w-full aspect-[3/2] overflow-hidden">
               <img
                 src="/images/ota/ota-30.jpg"
